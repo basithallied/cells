@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <template id="report_arabic_fonts"  inherit_id="web.assets_common">-->
+<!--        <xpath expr="." position="inside">-->
+<!--            <link rel="stylesheet" type="text/css" href="/e_tax_invoice_saudi_aio/static/src/css/style.css"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+    
+    <record model="ir.ui.view" id="view_tax_invoice_form">
+        <field name="name">tax.invoice.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="arabic_name"/>
+<!--                 <field name="our_code_no" style="height:20%"/>-->
+<!--                 <field name="l10n_sa_delivery_date" attrs="{'invisible': [('l10n_sa_show_delivery_date', '=', False)], 'required': [('l10n_sa_show_delivery_date', '=', True)]}"/>-->
+            </xpath>
+
+
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                 <label for="invoice_date_supply" string="Supply Date"/>
+                    <div class="d-flex" >
+                        <field name="invoice_date_supply_new" force_save="1" placeholder="From"/>
+                        <span class="o_form_label mx-3 oe_edit_only"> to </span>
+                        <field name="invoice_date_supply" placeholder="To"/>
+                    </div>
+                <field name="new_tax_exclude" invisible="1"/>
+                <field name="new_tax_only" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_date_due']" position="replace">
+
+                <field name="invoice_date_due"  invisible="1"/>
+<!--                <field name="invoice_payment_term_id"  invisible="1"/>-->
+            </xpath>
+<!--            <xpath expr="//field[@name='invoice_payment_term_id']" position="replace">-->
+
+
+<!--                <field name="invoice_payment_term_id"  invisible="1"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='invoice_payment_term_id']" position="replace">-->
+
+
+<!--                <field name="invoice_payment_term_id"  invisible="1"/>-->
+<!--            </xpath>-->
+
+
+<!--            <xpath expr="//span[hasclass('o_form_label mx-3 oe_edit_only')]" position="replace">-->
+
+<!--                <field name="invoice_date_due"  invisible="1"/>-->
+<!--            </xpath>-->
+
+<!---->
+             <xpath expr="//field[@name='payment_reference']" position="after">
+
+                <field name="journals"/>
+                <field name="contract_no"/>
+<!--                <field name="dates"/>-->
+                 <field name="our_code_no" style="height:20%"/>
+
+<!--                 <field name="l10n_sa_delivery_date" attrs="{'invisible': [('l10n_sa_show_delivery_date', '=', False)], 'required': [('l10n_sa_show_delivery_date', '=', True)]}"/>-->
+            </xpath>
+<!--            <xpath expr="//field[@name='currency_id']" position="after">-->
+<!--                <field name="conversion_rates"/>-->
+<!--            </xpath>-->
+
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_tax_invoice_tree_inherit">
+        <field name="name">tax.invoice.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_out_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='amount_untaxed_signed']" position="replace">
+                <field name="new_tax_exclude_tree" string="Tax Excluded" optional="show"/>
+                <field name="amount_untaxed_signed" string="Tax Excluded" sum="Total" optional="show" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_arabic_name_form">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+<!--                 <label for="arabic_name" string="Arabic Name"/>-->
+                    <div class="d-flex" >
+                        <field name="arabic_name" style="width:373px;" placeholder="Arabic name" />
+                    </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_partner_pricing_form" model="ir.ui.view">
+            <field name="name">res.partner.pricing.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="bank_ids" position="after">
+                    <group>
+                        <field name="journal_id"/>
+                    </group>
+                </field>
+            </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_company_form_etir">
+        <field name="name">tax.invoice.res.company.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="building_no"/>
+                <field name="additional_no"/>
+                <field name="other_seller_id"/>
+            </xpath>
+            <xpath expr="//group[@name='social_media']" position="before">
+                <group>
+                    <field name="arabic_name"/>
+                    <label for="arabic_street" string="Arabic Address"/>
+                    <div class="o_address_format">
+                        <field name="arabic_street" placeholder="Arabic Street..." class="o_address_street"/>
+                        <field name="arabic_street2" placeholder="Arabic Street 2..." class="o_address_street"/>
+                        <field name="arabic_city" placeholder="Arabic City" class="o_address_city"/>
+                        <field name="arabic_state" class="o_address_state" placeholder="Arabic State" options="{&quot;no_open&quot;: True}"/>
+                        <field name="arabic_zip" placeholder="Arabic ZIP" class="o_address_zip"/>
+                        <field name="arabic_country" placeholder="Arabic Country" class="o_address_country" options="{&quot;no_open&quot;: True}"/>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_form_etir">
+        <field name="name">tax.invoice.res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="building_no"/>
+                <field name="additional_no"/>
+                <field name="other_seller_id"/>
+            </xpath>
+        </field>
+    </record>
+            <record id="res_bank_view_search" model="ir.ui.view">
+            <field name="name">res.bank.view.search</field>
+            <field name="model">res.bank</field>
+            <field name="arch" type="xml">
+                <search string="Search Bank">
+                    <field name="name"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_res_bank_form" model="ir.actions.act_window">
+            <field name="name">Banks</field>
+            <field name="res_model">res.bank</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="res_bank_view_search"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new bank
+              </p><p>
+                Manage bank records you want to be used in the system.
+              </p>
+            </field>
+        </record>
+
+    <menuitem id="main_bank_new"
+              name="Bank"
+              parent="account.menu_finance"
+    />
+    <menuitem id="sub_menu_bank_new"
+              name="Add a Bank"
+              parent="e_tax_invoice_saudi_aio.main_bank_new"
+              action="action_res_bank_form"
+    />
+</odoo>
