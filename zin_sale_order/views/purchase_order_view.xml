@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-     <record id="view_order_form_inherit" model="ir.ui.view">
-        <field name="name">sale.order.form.inherit</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+     <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//form/sheet/notebook/page[2]" position='inside'>
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position='after'>
                 <page string="Shipping Details" name="shipping_details">
                     <group>
                         <group>
@@ -14,13 +14,12 @@
                             <field name="shipping_company_id"/>
                             <field name="shipping_date"/>
                             <field name="expected_date"/>
-                            <field name="port"/>
                             <field name="arrival_date_riyadh"/>
+                            <field name="port"/>
+                        </group>
+                        <group>
                             <field name="update_check_for_eta"/>
-                            <field name="original_documents"/>
-                            <field name="copy_documents"/>
-                            <field name="saber_certificate"/>
-                            <field name="shipping_status"/>
+                            <field name="shipping_status" widget="statusbar" statusbar_visible="draft,transit,arrived"/>
                             <field name="container_qty"/>
                             <field name="received_qty"/>
                             <field name="remaining_qty"/>
@@ -28,6 +27,11 @@
                         <group>
                             <field name="tracking_link" widget="url"/>
                             <field name="tracking_notes"/>
+                        </group>
+                        <group>
+                            <field name="original_documents"/>
+                            <field name="copy_documents"/>
+                            <field name="saber_certificate"/>
                         </group>
                     </group>
 

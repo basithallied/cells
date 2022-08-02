@@ -10,14 +10,14 @@
      """,
     "author": "Zinfog code labs",
     "email": '',
-    'depends': ['base', 'sale', 'product', 'sales_team'],
+    'depends': ['base', 'sale', 'product', 'sales_team', 'purchase'],
 
     'data': [
         # 'security/ir.model.access.csv',
         'data/maintenance_order_seq.xml',
         'views/sale_order_view.xml',
         'views/product_template_view.xml',
-        # 'views/maintenance_order_view.xml'
+        'views/purchase_order_view.xml',
 
     ],
     'demo': [],

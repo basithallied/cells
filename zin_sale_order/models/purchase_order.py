@@ -6,8 +6,8 @@ class PurchaseOrder(models.Model):
 
     container_qty = fields.Float("Container Qty")
     total_amount = fields.Float("Total Amount")
-    received_amount = fields.Float("Received Amount")
-    remaining_amount = fields.Float("Remaining Amount")
+    received_qty = fields.Float("Received Qty")
+    remaining_qty = fields.Float("Remaining Qty")
     bill_landing_no = fields.Char("Bill Of Landing Number")
     shipping_company_id = fields.Many2one('res.partner', "Shipping Company")
     shipping_date = fields.Date("Shipping Date")
