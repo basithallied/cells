@@ -28,11 +28,6 @@ class AccountMove(models.Model):
     new_tax_exclude_tree = fields.Char(string='Tax Excluded')
     new_tax_only = fields.Char(string='Tax Only')
 
-
-
-
-
-
     def _compute_new_tax_exclude(self):
         print("start computing")
         for rec in self:
@@ -54,9 +49,10 @@ class AccountMove(models.Model):
 
     def _compute_dates(self):
         inv_date = self.invoice_payment_term_id.line_ids.days
-        result = self.invoice_date + timedelta(days=inv_date)
-        new_date = result.strftime("%d-%b-%Y")
-        self.dates = new_date
+        if self.invoice_date:
+            result = self.invoice_date + timedelta(days=inv_date)
+            new_date = result.strftime("%d-%b-%Y")
+            self.dates = new_date
 
     @api.onchange('currency_id')
     def _onchange_currency_id(self):

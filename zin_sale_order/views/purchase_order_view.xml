@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+
+    <record id="view_inherit_purchase_order_tree" model="ir.ui.view">
+        <field name="name">Purchase Order</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field  name="tracking_link" widget="url"/>
+            </xpath>
+        </field>
+    </record>
+
      <record id="view_purchase_order_form_inherit" model="ir.ui.view">
         <field name="name">purchase.order.form.inherit</field>
         <field name="model">purchase.order</field>
@@ -7,7 +20,10 @@
         <field name="arch" type="xml">
 
             <xpath expr="//page[@name='purchase_delivery_invoice']" position='after'>
-                <page string="Shipping Details" name="shipping_details">
+                <page string="Shipping Details" name="shipping_details" groups="purchase.group_purchase_manager">
+                    <header>
+                        <field name="shipping_status" widget="statusbar" statusbar_visible="draft,transit,arrived"/>
+                    </header>
                     <group>
                         <group>
                             <field name="bill_landing_no"/>
@@ -19,7 +35,6 @@
                         </group>
                         <group>
                             <field name="update_check_for_eta"/>
-                            <field name="shipping_status" widget="statusbar" statusbar_visible="draft,transit,arrived"/>
                             <field name="container_qty"/>
                             <field name="received_qty"/>
                             <field name="remaining_qty"/>

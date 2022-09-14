@@ -12,8 +12,8 @@ class SaleOrder(models.Model):
         result = super(SaleOrder, self).create(vals)
         return result
 
-    pad_id = fields.Many2one("product.product", "Pad")
-    pad_qty = fields.Float("Pad Qty")
+    # pad_id = fields.Many2one("product.product", "Pad")
+    # pad_qty = fields.Float("Pad Qty")
     is_maintenance = fields.Boolean("Maintenance")
 
 

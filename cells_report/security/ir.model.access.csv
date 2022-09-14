@@ -1,5 +1,8 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 cooler_sales_report_wizard,cooler_sales_report_wizard,model_cooler_sales_report_wizard,,1,1,1,1
 cooler_maintenance_report_wizard,cooler_maintenance_report_wizard,model_cooler_maintenance_report_wizard,,1,1,1,1
+shipment_tracking_report_wizard,shipment_tracking_report_wizard,model_shipment_tracking_report_wizard,,1,1,1,1
+invoice_condition_wizard,invoice_condition_wizard,model_invoice_condition_wizard,,1,1,1,1
+
 
 

@@ -14,10 +14,10 @@
                     <field name="purchase_ok"/>
                     <label for="purchase_ok"/>
                 </span>
-                <span class="d-inline-block">
-                    <field name="is_pad"/>
-                    <label for="is_pad"/>
-                </span>
+<!--                <span class="d-inline-block">-->
+<!--                    <field name="is_pad"/>-->
+<!--                    <label for="is_pad"/>-->
+<!--                </span>-->
                 <span class="d-inline-block">
                     <field name="default_product"/>
                     <label for="default_product"/>

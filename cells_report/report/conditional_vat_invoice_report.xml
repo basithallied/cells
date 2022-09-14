@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_new_report_tax_invoice" model="ir.actions.report">
+        <field name="name">Tax Invoice</field>
+        <field name="model">invoice.condition.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">cells_report.report_conditional_vat_invoice</field>
+        <field name="report_file">cells_report.report_conditional_vat_invoice</field>
+    </record>
+
+	<template id="report_tax_invoice_document_new">
+		<t t-call="e_tax_invoice_saudi_aio.external_layout_seti">
+			<t t-foreach="doc" t-as="o">
+				<div class="page" style="padding-top:45px">
+					<link rel="stylesheet" href="/e_tax_invoice_saudi_aio/static/src/css/style.css"/>
+					<t t-set="company" t-value="res_company"/>
+					<div class="font">
+
+					<table style="border:1pt solid grey;width:100%;color:black;font-size:11px; margin-top:-28pt;" class="table-condensed table-sm">
+							<tr>
+								 <span t-if="o.move_type == 'out_refund'">
+									 <td style="padding:4pt;margin:5pt;font-weight: bold;text-align:center;background-color:#DCDCDC;"><span class="text-right arabic">Credit Note / اشعار دائن </span></td></span>
+								 <span t-else="">
+									 <td style="padding:4pt;margin:5pt;font-weight: bold;text-align:center;background-color:#DCDCDC;"><span class="text-right arabic">Tax Invoice / فاتورة ضريبية </span></td></span>
+							</tr>
+					</table>
+
+<!--					<div class="ro mb32">-->
+		                <div class="col-12" style="margin-top:-5pt; color:black;">
+							<table style="border:1pt solid grey;width:100%;color:black;" class="table-bordered table-sm">
+								<tr>
+									<td  style="width:25%;">‫‪Invoice‬‬ ‫‪Number‬‬</td>
+									<td  style="width:50%; text-align:center;"><span t-field="o.name"/></td>
+									<td  class="arabic" style="width:25%; text-align:right;">رقم الفاتورة</td>
+								</tr>
+								<tr>
+									<td style="width:25%;">‫‪Invoice‬‬ Date</td>
+									<td style="width:50%; text-align:center;"><span t-field="o.invoice_date"/></td>
+									<td class="arabic" style="width:25%; text-align:right;">تاريخ الفاتورة</td>
+								</tr>
+								<tr>
+									<td style="width:25%;">‫‪Due Date</td>
+									<td style="width:50%; text-align:center;"><span t-field="o.dates"/></td>
+									<td class="arabic" style="width:25%; text-align:right;">تاريخ الاستحقاق</td>
+								</tr>
+
+								<tr>
+									<td style="width:25%;">‫‪Job Reference‬</td>
+									<td style="width:50%; text-align:center;">
+									<span t-field="o.job_ref"/>
+									</td>
+									<td class="arabic" style="width:25%; text-align:right;">مرجع الوظيفة</td>
+								</tr>
+								<tr>
+									<td style="width:25%;">‫‪Your Order/Contract No‬</td>
+									<td style="width:50%; text-align:center;">
+									<span t-field="o.contract_no"/>
+									</td>
+									<td class="arabic" style="width:25%; text-align:right;">طلبك / العقد</td>
+								</tr>
+								<tr>
+									<td style="width:25%;">‫‪Job Code‬</td>
+									<td style="width:50%; text-align:center;">
+									<span t-field="o.our_code_no"/>
+									</td>
+									<td class="arabic" style="width:25%; text-align:right;">رقم المشروع</td>
+								</tr>
+							</table>
+							<br/>
+						</div>
+<!--						<div class="col-4" style="margin-top:-15pt; padding-left:25pt;">-->
+<!--							<br/>-->
+<!--							<img t-if="o.l10n_sa_qr_code_str" style="display:block;margin:10% auto 0 auto;padding-right: 150px; padding-right: 150px;"-->
+<!--                 					t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 140, 140)"/>-->
+<!--&lt;!&ndash;			                <img t-att-src="'data:image/png;base64,%s' % to_text(doc.get_qr_code())"&ndash;&gt;-->
+<!--&lt;!&ndash;			                    style="width: 140px; height=140px;" alt="Barcode"/>&ndash;&gt;-->
+<!--			            </div>-->
+<!--			        </div>-->
+						<br/>
+						<br/>
+		            <div class="row mt32 mb32">
+		                <div class="col-12" style="margin-top:-33pt;">
+							<table style="border:1pt solid grey;width:100%;">
+								<tr style="border:1pt solid grey;width:100%;color:#A9A9A9;">
+									<td width="25%" style="font-weight: bold;background-color:#DCDCDC; color:black;">Customer</td>
+									<td style="padding:5pt;margin:5pt;font-weight: bold;text-align:center;background-color:#DCDCDC;"></td>
+									<td width="25%" class="arabic text-right" style="font-weight: bold;text-align:center;background-color:#DCDCDC; color:black;">عميل</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+						<br/>
+						<br/>
+						<br/>
+		            <div class="row mt32 mb32" style="margin-top:-28pt; color:black;">
+		                <div class="col-6" style="margin-top:-28pt;">
+							<table style="border:1pt solid grey;width:100%;font-size:11px; " class="table table-bordered table-sm" >
+								<tr>
+									<td>Name</td>
+									<td colspan="2" class="text-center"><span t-field="o.partner_id.name"/></td>
+<!--									<td  class="text-right arabic">الاسم</td>-->
+								</tr>
+								<tr>
+									<td>الاسم</td>
+									<td colspan="2" class="text-center"><span t-field="o.partner_id.arabic_name"/></td>
+
+
+<!--									<td  class="text-right arabic">الاسم</td>-->
+								</tr>
+
+								<tr>
+									<td>Building No</td>
+									<td class="text-center"><span t-field="o.partner_id.building_no"/></td>
+									<td class="text-right arabic">رقم المبنى</td>
+								</tr>
+								<tr>
+									<td>Street Name</td>
+									<td class="text-center"><span t-field="o.partner_id.street"/></td>
+									<td class="text-right arabic">اسم الشارع</td>
+								</tr>
+								<tr>
+									<td>District</td>
+									<td class="text-center"><span t-field="o.partner_id.state_id.name"/></td>
+									<td class="text-right arabic">الحي</td>
+								</tr>
+								<tr>
+									<td>City</td>
+									<td class="text-center"><span t-field="o.partner_id.city"/></td>
+									<td class="text-right arabic">المدينة</td>
+								</tr>
+							</table>
+		                </div>
+		                <div class="col-6" style="margin-top:-28pt;">
+							<table style="border:1pt solid grey;width:100%;font-size:11px;" class="table table-bordered table-sm" >
+								<tr>
+									<td style="width:15%;">Country</td>
+									<td class="text-center" style="width:15%;"><span t-field="o.partner_id.country_id.name"/></td>
+									<td class="text-right arabic" style="width:18%;">البلد</td>
+								</tr>
+								<tr>
+									<td>Postal Code</td>
+									<td class="text-center"><span t-field="o.partner_id.zip"/></td>
+									<td class="text-right arabic">الرمز البريدي</td>
+								</tr>
+								<tr>
+									<td>PB No</td>
+									<td class="text-center"><span t-field="o.partner_id.additional_no"/></td>
+									<td class="text-right arabic"> ص ب</td>
+								</tr>
+								<tr>
+									<td>Vat No.</td>
+									<td class="text-center"><span t-field="o.partner_id.vat"/></td>
+									<td class="text-right arabic">الرقم الضريبي</td>
+								</tr>
+								<tr>
+									<td>Other Seller</td>
+									<td class="text-center"><span t-field="o.partner_id.other_seller_id"/></td>
+									<td class="text-right arabic">معرف أخر</td>
+								</tr>
+							</table>
+		                </div>
+		            </div>
+<br/>
+<br/>
+
+
+					<table style="border:1pt solid grey;width:100%;color:black;font-size:11px; margin-top:-15pt; color:black;" class="table-condensed">
+						<thead>
+							<tr>
+								<td width="20%" style="font-weight: bold;background-color:#DCDCDC;">Line Items</td>
+								<td colspan="6" style="font-weight: bold;background-color:#DCDCDC;"/>
+								<td width="20%" style="font-weight: bold;background-color:#DCDCDC;" class="text-right arabic">التفاصيل</td>
+							</tr>
+
+							<tr style="background-color:#DCDCDC">
+								<td width="25%" style="border:1pt solid grey;text-align:center;padding:2pt; ">Items<br/><span class="arabic">العناصر</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit Price<br/><span class="arabic">سعر الوحدة</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">Quantity<br/><span class="arabic">الكمية</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Taxable <br/> Amount<br/><span class="arabic">المبلغ الخاضع للضريبة</span></td>
+								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Discount<br/><span class="arabic">خصومات</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:8%">Tax Rate<br/><span class="arabic">نسبة الضريبة</span></td>
+								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Tax Amount<br/><span class="arabic">مبلغ الضريبة</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Item Subtotal<br/>(Including VAT) <br/><span class="arabic">المجموع (شامل ضريبة القيمة المضافة)</span></td>
+							</tr>
+						</thead>
+					 	<t t-set="tax_total" t-value="0"/>
+					 	<t t-set="discount_total" t-value="0"/>
+						<tbody class="invoice_tbody">
+						 	<tr t-foreach="o.invoice_line_ids" t-as="l">
+						 		<t t-set="line_tax_total" t-value="0"/>
+					 			<t t-foreach="l.tax_ids" t-as="t">
+					 				<t t-set="tax_total" t-value="round(tax_total + l.price_subtotal* t.amount/100, 2)"/>
+					 				<t t-set="line_tax_total" t-value="line_tax_total + t.amount"/>
+					 			</t>
+					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.quantity) - l.price_subtotal)"/>
+						 		<td style="border-right:1pt solid grey;padding:3pt">
+						 			<span t-field="l.name"/> -
+						 			<span class="text-right arabic" t-esc="doc.get_product_arabic_name(l.product_id.id)"/>
+						 			<br/>
+						 		</td>
+						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
+						 		<td style="border-right:1pt solid grey;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.quantity)"/></td>
+
+					 			<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
+						 			<sapn t-esc="'{0:,.2f}'.format(l.price_unit * l.quantity)"/>
+						 		</td>
+
+						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt;"  >
+	                                <span t-field="l.discount"/> %
+	                             </td>
+
+						 		<td style="border-right:1pt solid grey;padding:2pt;text-align:center;">
+						 			<t t-foreach="l.tax_ids" t-as="t">
+						 				<span t-esc="'{0:,.2f}'.format(t.amount)"/> %
+					 				</t>
+					 				<span t-if="not l.tax_ids">0.00 %</span>
+						 		</td>
+						 		<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
+						 			<t t-set="line_tax_total" t-value="l.price_subtotal*line_tax_total/100"/>
+						 			<span t-esc="'{0:,.2f}'.format(line_tax_total)"/>
+						 		</td>
+						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt" >
+									<span t-esc="'{0:,.2f}'.format(l.price_total)"/>
+<!--			                        <span t-field="l.price_total" t-field-options="{&quot;widget&quot;: &quot;False&quot;}"/>-->
+			                    </td>
+						 	</tr>
+						 	<!-- <tr t-foreach="range(max(10-len(o.invoice_line_ids),0))" t-as="l">
+		                        <td style="border-right:1pt solid grey;">&amp;nbsp;</td>
+		                        <td style="border-right:1pt solid grey;"></td>
+		                        <td style="border-right:1pt solid grey;"></td>
+		                        <td style="border-right:1pt solid grey;"></td>
+		                        <td style="border-right:1pt solid grey;"></td>
+		                        <td style="border-right:1pt solid grey;"></td>
+		                        <td style="border-right:1pt solid grey;"></td>
+		                        <td style="border-right:1pt solid grey;"></td>
+			               	</tr> -->
+		               	</tbody>
+					</table>
+
+					<table style="border:1pt solid grey;width:100%;color:black;margin-top:8px;font-size:11px; color:black;" class="table table-bordered table-sm">
+						<thead>
+							<tr>
+								<td width="33%" style="background-color:#DCDCDC;">Total Amounts</td>
+								<td width="33%" style="font-weight: bold;background-color:#DCDCDC;"/>
+								<td colspan="2" width="34%" style="font-weight: bold;background-color:#DCDCDC;" class="text-right arabic">المبالغ الإجمالية</td>
+
+							</tr>
+							<t t-set="discount_before_total" t-value="doc.amount_untaxed + discount_total"/>
+							<tr class="text-right">
+								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total (Excluding VAT)</td>
+								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">الإجمالي (غير شامل ضريبة القيمة المضافة)</td>
+<!--								<t t-if="doc.currency_id.name == 'SAR'">-->
+                                <td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="discount_before_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
+                                <t t-if="doc.conversion_rates_new.name == 'SAR'">
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((discount_before_total*doc.conversion_rates_new.con_rate),2))"></span>SAR</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'USD'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="discount_before_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((discount_before_total*doc.conversion_rates_new.con_rate),2))"></span>USD</td>
+								</t>
+								<t t-elif="doc.conversion_rates_new.name == 'EUR'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="discount_before_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span
+											t-esc="'{0:,.2f}'.format(round((discount_before_total*doc.conversion_rates_new.con_rate),2))"/>EUR</td>
+								</t>
+                                <t t-else="">
+
+                                </t>
+							</tr>
+							<tr class="text-right">
+								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Discount</td>
+								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">مجموع الخصم</td>
+<!--								<t t-if="doc.currency_id.name == 'SAR'">-->
+								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="discount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
+                                <t t-if="doc.conversion_rates_new.name == 'SAR'">
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((discount_total*doc.conversion_rates_new.con_rate),2))"></span> SAR</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'USD'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="discount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((discount_total*doc.conversion_rates_new.con_rate),2))"></span> USD</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'EUR'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="discount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((discount_total*doc.conversion_rates_new.con_rate),2))"></span> EUR</td></t>
+                                <t t-else="">
+
+                                </t>
+							</tr>
+							<tr class="text-right">
+								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Taxable Amount (Excluding VAT)</td>
+								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ الخاضع للضريبة (غير شامل ضريبة القيمة المضافة)</td>
+<!--								<t t-if="doc.currency_id.name == 'SAR'">-->
+								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
+                                <t t-if="doc.conversion_rates_new.name == 'SAR'">
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_untaxed*doc.conversion_rates_new.con_rate),2))"></span> SAR</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'USD'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_untaxed*doc.conversion_rates_new.con_rate),2))"></span> USD</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'EUR'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_untaxed*doc.conversion_rates_new.con_rate),2))"></span> EUR</td></t>
+                                <t t-else="">
+
+                                </t>
+							</tr>
+							<tr class="text-right">
+								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total VAT</td>
+								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي ضريبة القيمة المضافة</td>
+<!--								<t t-if="doc.currency_id.name == 'SAR'">-->
+								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="round(doc.amount_total - doc.amount_untaxed,2)" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
+                                <t t-if="doc.conversion_rates_new.name == 'SAR'">
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round(((doc.amount_total - doc.amount_untaxed)*doc.conversion_rates_new.con_rate),2))"></span> SAR</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'USD'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="tax_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round(((doc.amount_total - doc.amount_untaxed)*doc.conversion_rates_new.con_rate),2))"></span> USD</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'EUR'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="tax_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round(((doc.amount_total - doc.amount_untaxed)*doc.conversion_rates_new.con_rate),2))"></span> EUR</td></t>
+                                <t t-else="">
+
+                                </t>
+							</tr>
+							<tr class="text-right">
+								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Amount Due</td>
+								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ المستحق</td>
+<!--								<t t-if="doc.currency_id.name == 'SAR'">-->
+								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="doc.amount_residual" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
+                                <t t-if="doc.conversion_rates_new.name == 'SAR'">
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_residual*doc.conversion_rates_new.con_rate),2))"></span> SAR</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'USD'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="doc.amount_residual" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_residual*doc.conversion_rates_new.con_rate),2))"></span>USD</td></t>
+								<t t-elif="doc.conversion_rates_new.name == 'EUR'">
+<!--									<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-center"><span t-esc="doc.amount_residual" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_residual*doc.conversion_rates_new.con_rate),2))"></span> EUR</td></t>
+                                <t t-else="">
+
+                                </t>
+							</tr>
+						</thead>
+					</table>
+
+
+					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black;color:black;" class="table table-bordered table-sm">
+						<thead>
+							<tr>
+								<td width="30%" style="font-weight: bold;background-color:#DCDCDC;">AMOUNT INVOICED</td>
+								<td width="70%"><span t-esc="doc.amount_total_words(doc.amount_total)"/></td>
+							</tr>
+						</thead>
+					</table>
+<!--					<table style="border:1pt solid grey;width:100%;color:black;color:black; margin-top:-12pt;" class="table table-bordered table-sm">-->
+<!--						<thead>-->
+<!--							<tr>-->
+<!--								<td class="text-right arabic" width="70%" style="padding-right:12px;" ><span t-esc="doc.amount_word(doc.amount_total)"/></td>-->
+<!--								<td class="text-right arabic" width="30%" style="font-weight: bold;background-color:#DCDCDC;">المبالغ المفوترة</td>-->
+<!--							</tr>-->
+<!--						</thead>-->
+<!--					</table>-->
+					<br/>
+<!--			<div  style="font-size: 10.4px;">-->
+					<table style="border:1pt solid grey;width:60%;font-size:11px;color:black; margin-top:-10pt;">
+
+						<tr>
+							<td width="20%" class="col-6" style="border-bottom:1pt solid grey;font-size:12.4px;">Bank:
+								<span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
+								<br/>
+								<span t-field="o.bank_id.street" style="font-size: 12.4px;"/>
+								<span t-field="o.bank_id.street2" style="font-size: 12.4px;"/>
+								<span t-field="o.bank_id.country" style="font-size: 12.4px;"/>
+								<br/>ACC No:
+								<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
+								<br/>IBAN:
+								<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
+								<br/>Swift:
+								<span t-field="o.bank_id.swift" style="font-size: 12.4px;"></span>
+							</td>
+							<td width="30%" style="border-right:1pt solid grey;"/>
+							<td width="20%"
+								style="border-right:1pt solid grey; border-left:1pt solid grey; padding-top:15px;padding-left:4px; padding-right:4px;">
+								<img t-if="o.l10n_sa_qr_code_str"
+                 					t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 70, 70)"/>
+							</td>
+
+							<td width="20%" class="text-right"
+								style="border-right:1pt solid grey;border-bottom:1pt solid grey;">‫‪
+							</td>
+						</tr>
+
+
+
+					</table>
+						<br/>
+						<span t-if="condition_type == 'pad'">
+							<table>
+							<tr>
+								<td>
+									<span style="font-weight: bold; color:black;">Notes For Reference</span><br/><br/>
+									1 ) This Price is for Required Qty or More <br/>
+									2 ) Delivery time starting after 3 working weeks after payments
+
+									<br/><br/>
+									<span style="font-weight: bold; color:black;">Warranty Coverage</span>
+									<br/><br/>
+									One year Warranty against any manufacturing defect starting at the date of delivery.
+									<br/><br/>
+
+									<span style="font-weight: bold; color:black;">XCEL Cooling Pad Specifications</span>
+									<br/><br/>
+									1 ) 100 % Virgin kraft paper <br/>
+									2 ) High Bonding Glue <br/>
+									3 ) High quality Chemical Resin <br/>
+
+								</td>
+							</tr>
+						</table>
+						</span>
+						<span t-if="condition_type == 'cooler'">
+							<table>
+							<tr>
+								<td>
+									Delivery Time from 10 To 14 Working days after payments<br/><br/>
+
+									<span style="font-weight: bold; color:black;">CUSTOMER RESPONSIBILITY</span> <br/>
+									<br/>
+									1 ) Electric and Water supply to coolers location.<br/>
+									2 ) Automatic water pump to insure water flow.<br/>
+									3 ) Water pressure.<br/>
+									4 ) Motor electric breakers.<br/><br/>
+
+									<span style="font-weight: bold; color:black;">WARRANTY COVERAGE</span> <br/>
+									<br/>
+									1 ) 15 Years for Fiberglass body against manufacturing defects.<br/>
+									2 ) 2 Years for the electric &amp; mechanical parts against manufacturing defects.<br/>
+									3 ) Warranty coverage starts with delivery with full payment. <br/>
+
+								</td>
+							</tr>
+						</table>
+						</span>
+						<span  style="padding-left:450pt;padding-top:30pt;">................Signature &amp;nbsp; إمضاء</span>
+
+				</div>
+				</div>
+<!--			</div>-->
+		</t>
+	 </t>
+	</template>
+
+    <template id="report_conditional_vat_invoice">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+	            <t t-call="cells_report.report_tax_invoice_document_new"/>
+	        </t>
+        </t>
+    </template>
+
+
+</odoo>
+

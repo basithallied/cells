@@ -2,7 +2,7 @@
 <odoo>
 	<data>
 
-	<report 
+	<report
 		id="action_report_tax_invoice"
 		string="Saudi VAT Invoice"
 		model="account.move"
