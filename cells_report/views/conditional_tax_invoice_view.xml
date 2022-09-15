@@ -14,6 +14,7 @@
                     <group>
                         <button name="print_report" string="Print Report"
                                 type="object" class="oe_highlight"/>
+                        <button special="cancel" data-hotkey="z" string="Cancel" class="btn-secondary"/>
                     </group>
                 </footer>
             </form>

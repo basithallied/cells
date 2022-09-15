@@ -1,5 +1,11 @@
 from odoo import api, fields, models, SUPERUSER_ID, _
 
+READONLY_STATES = {
+        'purchase': [('readonly', True)],
+        'done': [('readonly', True)],
+        'cancel': [('readonly', True)],
+    }
+
 
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
@@ -24,4 +30,7 @@ class PurchaseOrder(models.Model):
         ('arrived', 'Arrived')], string="Shipping Status", default='draft', required=True)
     tracking_link = fields.Text(string='Tracking Link')
     tracking_notes = fields.Text(string='Notes')
+    date_planned = fields.Datetime(tracking=True,
+        string='Receipt Date', index=True, copy=False, compute='_compute_date_planned', store=True, readonly=False,
+        help="Delivery date promised by vendor. This date is used to determine expected arrival of products.")
 
