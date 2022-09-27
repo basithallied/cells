@@ -10,6 +10,7 @@
     </record>
 
 	<template id="report_tax_invoice_document_new">
+
 		<t t-call="e_tax_invoice_saudi_aio.external_layout_seti">
 			<t t-foreach="doc" t-as="o">
 				<div class="page" style="padding-top:45px">
@@ -441,7 +442,6 @@
 
 				</div>
 				</div>
-<!--			</div>-->
 		</t>
 	 </t>
 	</template>

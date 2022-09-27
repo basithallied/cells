@@ -18,6 +18,9 @@
         'views/sale_order_view.xml',
         'views/product_template_view.xml',
         'views/purchase_order_view.xml',
+        'views/cells_security.xml',
+        'views/stock_inventory.xml',
+        'views/reorder_cron.xml',
 
     ],
     'demo': [],

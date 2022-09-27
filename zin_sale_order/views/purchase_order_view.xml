@@ -31,7 +31,7 @@
         <field name="arch" type="xml">
 
             <xpath expr="//page[@name='purchase_delivery_invoice']" position='after'>
-                <page string="Shipping Details" name="shipping_details" groups="purchase.group_purchase_manager">
+                <page string="Shipping Details" name="shipping_details" groups="zin_sale_order.cells_user_shipping_details">
                     <header>
                         <field name="shipping_status" widget="statusbar" statusbar_visible="draft,transit,arrived"/>
                     </header>

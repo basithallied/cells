@@ -7,15 +7,12 @@ class InvoiceConditionWizard(models.TransientModel):
 
     condition_type = fields.Selection([
         ('cooler', 'Cooler'),
-        ('pad', 'Cooling Pad')], string="Format", default='cooler', required=True)
+        ('pad', 'Cooling Pad'),
+        ('no_terms', 'No Terms & Conditions')], string="Format", default='cooler', required=True)
 
     def print_report(self):
-        print("hiii")
-        print(self.condition_type)
-        print(self._name)
         invoice_id = self.env.context.get('active_ids', [])
         invoice = self.env['account.move'].browse(invoice_id)
-        print(invoice)
         data = {
             'invoice_id': invoice.id,
             'condition_type': self.condition_type

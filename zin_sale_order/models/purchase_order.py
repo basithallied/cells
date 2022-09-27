@@ -19,7 +19,7 @@ class PurchaseOrder(models.Model):
     shipping_date = fields.Date("Shipping Date")
     expected_date = fields.Date("Expected Date")
     port = fields.Char("Port")
-    arrival_date_riyadh = fields.Date("Arrival Date Riyadh")
+    arrival_date_riyadh = fields.Date("Arrival Date")
     update_check_for_eta = fields.Boolean("Update Check For ETA")
     original_documents = fields.Binary("Original Documents")
     copy_documents = fields.Binary("Copy Documents")
