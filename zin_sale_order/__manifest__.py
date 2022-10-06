@@ -10,7 +10,7 @@
      """,
     "author": "Zinfog code labs",
     "email": '',
-    'depends': ['base', 'sale', 'product', 'sales_team', 'purchase'],
+    'depends': ['base', 'sale', 'product', 'sales_team', 'purchase', 'stock'],
 
     'data': [
         # 'security/ir.model.access.csv',
@@ -21,6 +21,7 @@
         'views/cells_security.xml',
         'views/stock_inventory.xml',
         'views/reorder_cron.xml',
+        'views/stock_move_inherit.xml'
 
     ],
     'demo': [],
