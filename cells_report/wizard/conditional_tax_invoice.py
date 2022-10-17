@@ -17,7 +17,8 @@ class InvoiceConditionWizard(models.TransientModel):
             'invoice_id': invoice.id,
             'condition_type': self.condition_type
         }
-        return self.env.ref('cells_report.action_new_report_tax_invoice').report_action(self, data=data)
+        return self.env.ref('cells_report.action_cells_tax_invoice_report').report_action(self, data=data)
+        # return self.env.ref('cells_report.action_new_report_tax_invoice').report_action(self, data=data)
 
 
 class TaxInvoice(models.AbstractModel):

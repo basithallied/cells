@@ -20,10 +20,17 @@
         'views/shipment_tracking_wizard_view.xml',
         'views/conditional_tax_invoice_view.xml',
         'report/conditional_vat_invoice_report.xml',
+        'report/cells_invoice_layout.xml',
+        'report/cells_vat_invoice_template.xml',
 
     ],
     'demo': [],
     'installable': True,
     'auto_install': False,
     'application': True,
+    "assets": {
+        "web.assets_common": [
+            "e_tax_invoice_saudi_aio/static/src/css/style.css"
+        ]
+    }
 }
