@@ -20,17 +20,18 @@
 					<div class="row mt32 mb32">
 						 <div class="col-6" style="margin-top:-28pt;">
 							 <table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-									 <td style="font-weight: bold;text-align:center;">
+								 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
+									 <td style="font-weight: bold;text-align:left;">
 										 <span class="text-right arabic"> Customer Information </span>
 									 </td>
-									 <td style="font-weight: bold;">
-										 <span class="text-right arabic"> عميل </span>
+									 <td style="font-weight: bold;text-align:right;">
+										 <span class="text-right arabic"> معلومات العميل </span>
 									 </td>
 								 </tr>
 								 <tr>
 									 <td colspan="2" class="text-center">
-										 <span t-field="o.partner_id.name"/>
+										 <span style="font-weight: bold;text-align:right;">اسم العميل - </span>
+										 <span t-field="o.partner_id.name"/><br/>
 										 <span t-field="o.partner_id.arabic_name"/>
 									 </td>
 
@@ -44,28 +45,18 @@
 								 <tr>
 									 <td colspan="2" class="text-center">
 										 <span t-field="o.partner_id.vat"/>
-										 <span t-field="o.partner_id.state_id.name"/>
-									 </td>
-								 </tr>
-								 <tr>
-									 <td colspan="2" class="text-center">
-										 <span t-field="o.partner_id.city"/>
-										 <span t-field="o.partner_id.state_id.name"/>
-									 </td>
-								 </tr>
-								 <tr>
-									 <td colspan="2" class="text-center">
-										 <span t-field="o.partner_id.city"/>
-										 <span t-field="o.partner_id.state_id.name"/>
 									 </td>
 								 </tr>
 							 </table>
 						 </div>
 						 <div class="col-6" style="margin-top:-28pt;">
 							 <table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-									 <td style="font-weight: bold;border:1pt solid grey;text-align:center;">
+								 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
+									 <td style="font-weight: bold;text-align:left;">
 										 <span class="text-right arabic"> Supplier Information </span>
+									 </td>
+									 <td style="font-weight: bold;text-align:right;">
+										 <span class="text-right arabic">معلومات المورد</span>
 									 </td>
 								 </tr>
 								 <tr>
@@ -77,8 +68,20 @@
 								 </tr>
 								 <tr>
 									 <td colspan="2" class="text-center">
-										 <span t-field="o.partner_id.city"/>
-										 <span t-field="o.partner_id.state_id.name"/>
+										 <span>VAT # </span>
+										 <span t-field="o.company_id.vat"/>
+									 </td>
+								 </tr>
+								 <tr>
+									 <td colspan="2" class="text-center">
+										 <span>WEBSITE # </span>
+										 <span t-field="o.company_id.website"/>
+									 </td>
+								 </tr>
+								 <tr>
+									 <td colspan="2" class="text-center">
+										 <span>EMAIL # </span>
+										 <span t-field="o.company_id.email"/>
 									 </td>
 								 </tr>
 							 </table>
@@ -86,30 +89,89 @@
 					</div>
 					<br/>
 					<table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-						 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
+						 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
+							 <th style="border:1pt solid grey;">
+								 <span style="text-align:left;">Cust ID</span><span style="text-align:right;">رقم العميل</span>
+							 </th>
+							 <th style="border:1pt solid grey;text-align:center;">
+								 <span style="text-align:left;">PO#</span><span style="text-align:right;">رقم الشراء</span>
+							 </th>
+							 <th style="border:1pt solid grey;text-align:center;">
+								 <span style="text-align:left;">Delivery Method</span><span style="text-align:right;">طريقة التوصيل</span>
+							 </th>
+							 <th style="border:1pt solid grey;text-align:center;">
+								 <span style="text-align:left;">SO#</span><span style="text-align:right;">طريقة التوصيل</span>
+							 </th>
 						 </tr>
 						 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-							 <td style="border:1pt solid grey;text-align:center;">Cust ID</td>
-							 <td style="border:1pt solid grey;text-align:center;">Cust ID</td>
-							 <td style="border:1pt solid grey;text-align:center;">Cust ID</td>
-							 <td style="border:1pt solid grey;text-align:center;">Cust ID</td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+						 </tr>
+						 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
+							 <th style="border:1pt solid grey;text-align:center;" colspan="2">
+								  <span style="text-align:left;">Sales Rep</span><span style="text-align:right;">مندوب مبيعات</span>
+							 </th>
+							 <th style="border:1pt solid grey;text-align:center;">
+								  <span style="text-align:left;">payment Terms</span><span style="text-align:right;">شروط الدفع</span>
+							 </th>
+							 <th style="border:1pt solid grey;text-align:center;">
+								  <span style="text-align:left;">Ship to City</span><span style="text-align:right;">شحن إلى المدينة</span>
+							 </th>
 						 </tr>
 						 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-							 <th style="border:1pt solid grey;text-align:center;" colspan="2">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
-						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-							 <th style="border:1pt solid grey;text-align:center;" colspan="2">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
-							 <th style="border:1pt solid grey;text-align:center;">Cust ID</th>
+							 <td style="border:1pt solid grey;text-align:center;" colspan="2">
+								 <span t-field="o.invoice_user_id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span></span>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span> </span>
+							 </td>
 						 </tr>
 					</table>
+					<br/>
+
+					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black;">
+						<tr>
+							<td width="20%" class="col-6" style="border-bottom:1pt solid grey;font-size:12.4px;">Bank:
+								<span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
+								<br/>
+								<span t-field="o.bank_id.street" style="font-size: 12.4px;"/>
+								<span t-field="o.bank_id.street2" style="font-size: 12.4px;"/>
+								<span t-field="o.bank_id.country" style="font-size: 12.4px;"/>
+								<br/>ACC No:
+								<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
+								<br/>IBAN:
+								<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
+								<br/>Swift:
+								<span t-field="o.bank_id.swift" style="font-size: 12.4px;"></span>
+							</td>
+							<td width="30%" style="border-right:1pt solid grey;"/>
+							<td width="20%"
+								style="border-right:1pt solid grey; border-left:1pt solid grey; padding-top:15px;padding-left:4px; padding-right:4px;">
+								<img t-if="o.l10n_sa_qr_code_str"
+                 					t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 70, 70)"/>
+							</td>
+							<td width="20%" class="text-right"
+								style="border-right:1pt solid grey;border-bottom:1pt solid grey;">‫‪
+							</td>
+						</tr>
+					</table>
+
 					<br/><br/>
+
+
 					<table style="border:1pt solid grey;width:100%;color:black;font-size:11px; margin-top:-15pt; color:black;" class="table-condensed">
 						<thead>
 							<tr style="background-color:#DCDCDC">
@@ -166,6 +228,7 @@
 
 		               	</tbody>
 					</table>
+
 					<table style="border:1pt solid grey;width:100%;color:black;margin-top:8px;font-size:11px; color:black;" class="table table-bordered table-sm">
 						<thead>
 							<tr>
@@ -250,41 +313,16 @@
 							</tr>
 						</thead>
 					</table>
+
 					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black;color:black;" class="table table-bordered table-sm">
 						<thead>
 							<tr>
 								<td width="30%" style="font-weight: bold;background-color:#DCDCDC;">AMOUNT INVOICED</td>
-								<td width="70%"><span t-esc="doc.amount_total_words(doc.amount_total)"/></td>
+								<td width="70%" style="font-size:12px;font-weight: bold;"><span t-esc="doc.amount_total_words(doc.amount_total)"/></td>
 							</tr>
 						</thead>
 					</table>
-					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black; margin-top:-10pt;">
-						<tr>
-							<td width="20%" class="col-6" style="border-bottom:1pt solid grey;font-size:12.4px;">Bank:
-								<span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
-								<br/>
-								<span t-field="o.bank_id.street" style="font-size: 12.4px;"/>
-								<span t-field="o.bank_id.street2" style="font-size: 12.4px;"/>
-								<span t-field="o.bank_id.country" style="font-size: 12.4px;"/>
-								<br/>ACC No:
-								<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
-								<br/>IBAN:
-								<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
-								<br/>Swift:
-								<span t-field="o.bank_id.swift" style="font-size: 12.4px;"></span>
-							</td>
-							<td width="30%" style="border-right:1pt solid grey;"/>
-							<td width="20%"
-								style="border-right:1pt solid grey; border-left:1pt solid grey; padding-top:15px;padding-left:4px; padding-right:4px;">
-								<img t-if="o.l10n_sa_qr_code_str"
-                 					t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 70, 70)"/>
-							</td>
-							<td width="20%" class="text-right"
-								style="border-right:1pt solid grey;border-bottom:1pt solid grey;">‫‪
-							</td>
-						</tr>
-					</table>
-					<br/>
+
 					<span t-if="condition_type == 'pad'">
 						<table>
 						<tr>
