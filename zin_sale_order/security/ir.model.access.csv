@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_zin_maintenance_order,access.zin.maintenance.order,model_zin_maintenance_order,,1,1,1,1
+
+access_cells_terms_conditions,access.cells.terms.conditions,model_cells_terms_conditions,,1,1,1,1
+access_cells_terms_conditions_lines,access.cells.terms.conditions.lines,model_cells_terms_conditions_lines,,1,1,1,1
+access_cells_line_values,access.cells.line.values,model_cells_line_values,,1,1,1,1
+

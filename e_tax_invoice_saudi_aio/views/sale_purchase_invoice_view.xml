@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<!--    <template id="report_arabic_fonts"  inherit_id="web.assets_common">-->
-<!--        <xpath expr="." position="inside">-->
-<!--            <link rel="stylesheet" type="text/css" href="/e_tax_invoice_saudi_aio/static/src/css/style.css"/>-->
-<!--        </xpath>-->
-<!--    </template>-->
-    
+
     <record model="ir.ui.view" id="view_tax_invoice_form">
         <field name="name">tax.invoice.form.inherit</field>
         <field name="model">account.move</field>
@@ -14,11 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="arabic_name"/>
-<!--                 <field name="our_code_no" style="height:20%"/>-->
-<!--                 <field name="l10n_sa_delivery_date" attrs="{'invisible': [('l10n_sa_show_delivery_date', '=', False)], 'required': [('l10n_sa_show_delivery_date', '=', True)]}"/>-->
             </xpath>
-
-
             <xpath expr="//field[@name='invoice_date']" position="after">
                  <label for="invoice_date_supply" string="Supply Date"/>
                     <div class="d-flex" >
@@ -30,41 +21,13 @@
                 <field name="new_tax_only" invisible="1"/>
             </xpath>
             <xpath expr="//field[@name='invoice_date_due']" position="replace">
-
                 <field name="invoice_date_due"  invisible="1"/>
-<!--                <field name="invoice_payment_term_id"  invisible="1"/>-->
             </xpath>
-<!--            <xpath expr="//field[@name='invoice_payment_term_id']" position="replace">-->
-
-
-<!--                <field name="invoice_payment_term_id"  invisible="1"/>-->
-<!--            </xpath>-->
-<!--            <xpath expr="//field[@name='invoice_payment_term_id']" position="replace">-->
-
-
-<!--                <field name="invoice_payment_term_id"  invisible="1"/>-->
-<!--            </xpath>-->
-
-
-<!--            <xpath expr="//span[hasclass('o_form_label mx-3 oe_edit_only')]" position="replace">-->
-
-<!--                <field name="invoice_date_due"  invisible="1"/>-->
-<!--            </xpath>-->
-
-<!---->
              <xpath expr="//field[@name='payment_reference']" position="after">
-
                 <field name="journals"/>
                 <field name="contract_no"/>
-<!--                <field name="dates"/>-->
                  <field name="our_code_no" style="height:20%"/>
-
-<!--                 <field name="l10n_sa_delivery_date" attrs="{'invisible': [('l10n_sa_show_delivery_date', '=', False)], 'required': [('l10n_sa_show_delivery_date', '=', True)]}"/>-->
             </xpath>
-<!--            <xpath expr="//field[@name='currency_id']" position="after">-->
-<!--                <field name="conversion_rates"/>-->
-<!--            </xpath>-->
-
         </field>
     </record>
     <record model="ir.ui.view" id="view_tax_invoice_tree_inherit">
@@ -85,7 +48,6 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-<!--                 <label for="arabic_name" string="Arabic Name"/>-->
                     <div class="d-flex" >
                         <field name="arabic_name" style="width:373px;" placeholder="Arabic name" />
                     </div>

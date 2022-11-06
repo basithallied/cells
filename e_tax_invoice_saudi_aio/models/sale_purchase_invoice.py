@@ -14,7 +14,6 @@ from datetime import timedelta, datetime
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-
     arabic_name = fields.Char(string='Arabic Name')
     arabic_relate = fields.Char('Relate')
     date_due = fields.Date('Date Due')
@@ -64,54 +63,17 @@ class AccountMove(models.Model):
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         list1 = []
-        s=[]
         h = []
         for rec in self:
-            print(rec.partner_id)
             if rec.partner_id:
-
                 rec.arabic_name = rec.partner_id.arabic_name
                 rec.journals = rec.partner_id.journal_id.name
-
                 list1 = rec.partner_id.bank_ids
 
-
-
-                # print(self.partner_id.bank_ids.bank_id.name, self.bank_id ,"BANK DETAILSSS...........................................")
-                # for rec in self.partner_id.bank_ids:
-                #     print(rec,"REARSDAFGANSDANS")
-                    # self.bank_id = rec.bank_id.id
-
         for rec in list1:
-            print(rec,"rrrrrrrerEREEre")
             h.append(rec.bank_id.id)
-        print(h,'pppppppppppppppppp')
         domain = {'bank_id': [('id', 'in', h)]}
-        # return {'domain': {'bank_id': [('id', 'in', rec.partner_id.bank_ids)]}}
         return {'domain': domain}
-    # def action_register_payment(self):
-    #     ''' Open the account.payment.register wizard to pay the selected journal entries.
-    #     :return: An action opening the account.payment.register wizard.
-    #     '''
-    #     return {
-    #         'name': _('Register Payment'),
-    #         'res_model': 'account.payment.register',
-    #         'view_mode': 'form',
-    #         'context': {
-    #             'active_model': 'account.move',
-    #             'active_ids': self.ids,
-    #             # 'journal_id': self.ids.journals,
-    #         },
-    #         'target': 'new',
-    #         'type': 'ir.actions.act_window',
-    #     }
-
-
-
-    # invoice_date = fields.Date(string='Invoice/Bill Date', readonly=True, index=True, copy=False,
-    #                            states={'draft': [('readonly', False)]},
-    #                            default=_get_default_invoice_date)
-
 
     def get_product_arabic_name(self,pid):
         translation = self.env['ir.translation'].search([
@@ -127,7 +89,6 @@ class AccountMove(models.Model):
             if translation :
                 return translation.value
         return ''
-
 
     def amount_word(self, amount):
         language = self.partner_id.lang or 'en'
@@ -196,9 +157,6 @@ class AccountMove(models.Model):
         ctx = dict(
             default_model='account.move',
             default_res_id=self.id,
-            # For the sake of consistency we need a default_res_model if
-            # default_res_id is set. Not renaming default_model as it can
-            # create many side-effects.
             default_res_model='account.move',
             default_use_template=bool(template),
             default_template_id=template and template.id or False,
@@ -220,47 +178,6 @@ class AccountMove(models.Model):
             'context': ctx,
         }
 
-
-    # def action_invoice_sent(self):
-    #     """ Open a window to compose an email, with the edi invoice template
-    #         message loaded by default
-    #     """
-    #     self.ensure_one()
-    #     template = self.env.ref('e_tax_invoice_saudi_aio.email_template_edi_invoice_etir', False)
-    #     compose_form = self.env.ref('account.account_invoice_send_wizard_form', False)
-    #     # have model_description in template language
-    #     lang = self.env.context.get('lang')
-    #     if template and template.lang:
-    #         lang = template._render_template(template.lang, 'account.move', self.id)
-    #     self = self.with_context(lang=lang)
-    #     TYPES = {
-    #         'out_invoice': _('Invoice'),
-    #         'in_invoice': _('Vendor Bill'),
-    #         'out_refund': _('Credit Note'),
-    #         'in_refund': _('Vendor Credit note'),
-    #     }
-    #     ctx = dict(
-    #         default_model='account.move',
-    #         default_res_id=self.id,
-    #         default_use_template=bool(template),
-    #         default_template_id=template and template.id or False,
-    #         default_composition_mode='comment',
-    #         mark_invoice_as_sent=True,
-    #         model_description=TYPES[self.type],
-    #         custom_layout="mail.mail_notification_paynow",
-    #         force_email=True
-    #     )
-    #     return {
-    #         'name': _('Send Invoice'),
-    #         'type': 'ir.actions.act_window',
-    #         'view_type': 'form',
-    #         'view_mode': 'form',
-    #         'res_model': 'account.move.send',
-    #         'views': [(compose_form.id, 'form')],
-    #         'view_id': compose_form.id,
-    #         'target': 'new',
-    #         'context': ctx,
-    #     }
 class ResBankInherit(models.Model):
     _inherit = 'res.bank'
 
@@ -281,7 +198,6 @@ class ResPartner(models.Model):
     additional_no = fields.Char('P.O.Box')
     other_seller_id = fields.Char('Other Seller Id')
     journal_id = fields.Many2one('account.journal', string='Journal')
-
 
 
 class ResCompany(models.Model):
@@ -319,21 +235,11 @@ class SaleOrder(models.Model):
 
     @api.model
     def get_qr_code(self):
-        # base_url = http.request.env['ir.config_parameter'].get_param('web.base.url')
-        # data = str(base_url) + str("/web#id="+str(self.id)+"&view_type=form&model="+self._name)     
-        # data = 'Custome Name : ' + str(self.partner_id.name or '')
-        # data += '\nVAT Number : ' + str(self.partner_id.vat or '')
-        # data += '\nDate Order : ' + str(self.date_order or '')
-        # data += '\nTotal VAT : ' + str(self.amount_tax or '')
-        # data += '\nTotal Amount : ' + str(self.currency_id and self.currency_id.symbol or '') + ' ' + str(self.amount_total or 0.0)
-
         data = 'Supplier Name : ' + str(self.company_id.name or '')
         data += '\nVAT Number : ' + str(self.company_id.vat or '')
-        # data += '\nCreate Datetime : ' + str(self.create_date.strftime("%Y-%m-%d %H:%M:%S") or '')
         data += '\nDate Order : ' + str(self.date_order or '')
         data += '\nTotal VAT : ' + str(self.amount_tax or '')
         data += '\nTotal Amount : ' + str(self.currency_id and self.currency_id.symbol or '') + ' ' + str(self.amount_total or 0.0)
-
         img = qrcode.make(data)
         result = io.BytesIO()
         img.save(result, format='PNG')
@@ -428,17 +334,8 @@ class PurchaseOrder(models.Model):
 
     @api.model
     def get_qr_code(self):
-        # base_url = http.request.env['ir.config_parameter'].get_param('web.base.url')
-        # data = str(base_url) + str("/web#id="+str(self.id)+"&view_type=form&model="+self._name)     
-        # data = 'Vendor Name : ' + str(self.partner_id.name or '')
-        # data += '\nVAT Number : ' + str(self.partner_id.vat or '')
-        # data += '\nOrder date : ' + str(self.date_order or '')
-        # data += '\nTotal VAT : ' + str(self.amount_tax or '')
-        # data += '\nTotal Amount : ' + str(self.currency_id and self.currency_id.symbol or '') + ' ' + str(self.amount_total or 0.0)
-
         data = 'Supplier Name : ' + str(self.company_id.name or '')
         data += '\nVAT Number : ' + str(self.company_id.vat or '')
-        # data += '\nCreate Datetime : ' + str(self.create_date.strftime("%Y-%m-%d %H:%M:%S") or '')
         data += '\nDate Order : ' + str(self.date_order or '')
         data += '\nTotal VAT : ' + str(self.amount_tax or '')
         data += '\nTotal Amount : ' + str(self.currency_id and self.currency_id.symbol or '') + ' ' + str(self.amount_total or 0.0)      

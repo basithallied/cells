@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_cells_terms_form" model="ir.ui.view">
+        <field name="name">cells.terms.conditions.form</field>
+        <field name="model">cells.terms.conditions</field>
+        <field name="arch" type="xml">
+            <form string="Cells Terms">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="type"/>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page id="terms" string="Terms">
+                            <field name="line_ids" widget="section_and_note_one2many">
+                                <tree string="PMS" editable="bottom" >
+                                    <field name="name"/>
+                                    <field name="val_ids" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_cells_terms_tree" model="ir.ui.view">
+        <field name="name">cells.terms.conditions.tree</field>
+        <field name="model">cells.terms.conditions</field>
+        <field name="arch" type="xml">
+            <tree string="Cells Terms">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

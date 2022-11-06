@@ -5,6 +5,7 @@ class StockOrderPoint(models.Model):
     _inherit = "stock.warehouse.orderpoint"
 
     def reorder_notification(self):
+        print("hgvh")
         reorders = self.env['stock.warehouse.orderpoint'].search([('active', '=', True)])
         reordering_list = []
         for order in reorders:
@@ -19,11 +20,11 @@ class StockOrderPoint(models.Model):
                     'auto_delete': True,
                     'author_id': mail_user.partner_id.id,
                     'email_from': mail_company.email_formatted,
-                    'email_to': mail_company.email_formatted,
+                    'email_to': 'sumayya@zinfog.com',
                     'body_html': body,
                     'reply_to': mail_company.email_formatted or mail_user.email_formatted,
                     'state': 'outgoing',
-                    'subject': "test"
+                    'subject': "Minimum QTY"
                 }
                 mail = self.env['mail.mail'].sudo().create(mail_values)
                 mail.sudo().send()

@@ -9,9 +9,9 @@
             <xpath expr="//button[@name='action_invoice_sent']" position='attributes'>
                    <attribute name="attrs">{'invisible': [('state', 'in', ('draft','posted','cancel'))]}</attribute>
             </xpath>
-             <xpath expr="//button[@name='preview_invoice']" position='before'>
-                   <button name="invoice_button" class="oe_highlight" string="Invoice" type="object"/>
-             </xpath>
+<!--             <xpath expr="//button[@name='preview_invoice']" position='before'>-->
+<!--                   <button name="invoice_button" class="oe_highlight" string="Invoice" type="object"/>-->
+<!--             </xpath>-->
             <xpath expr="//field[@name='payment_reference']" position="before">
                 <field name="bank_id"/>
             </xpath>
@@ -21,10 +21,6 @@
                      <field name="job_ref"/>
             </xpath>
 
-<!--            <xpath expr="//field[@name='amount_untaxed']" position="before">-->
-<!--                <field name="con_discount_total" force_save="1" invisible="0"/>-->
-<!--                <field name="con_total_ex_vat" force_save="1" invisible="0"/>-->
-<!--            </xpath>-->
         </field>
      </record>
      <record id="account.account_invoices" model="ir.actions.report">

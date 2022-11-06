@@ -10,18 +10,18 @@
      """,
     "author": "Zinfog code labs",
     "email": '',
-    'depends': ['base', 'sale', 'product', 'sales_team', 'purchase', 'web', 'e_tax_invoice_saudi_aio'],
+    'depends': ['base', 'sale', 'product', 'sales_team', 'purchase', 'web'],
 
     'data': [
         'security/ir.model.access.csv',
         'views/cooler_sales_report_view.xml',
         'views/cooler_maintenance_wizard_view.xml',
-        'report/report_purchase_quotation.xml',
         'views/shipment_tracking_wizard_view.xml',
         'views/conditional_tax_invoice_view.xml',
-        'report/conditional_vat_invoice_report.xml',
+        'report/report_purchase_quotation.xml',
         'report/cells_invoice_layout.xml',
         'report/cells_vat_invoice_template.xml',
+        'report/report_saleorder_document.xml'
 
     ],
     'demo': [],
@@ -30,7 +30,7 @@
     'application': True,
     "assets": {
         "web.assets_common": [
-            "e_tax_invoice_saudi_aio/static/src/css/style.css"
+            "cells_report/static/src/css/style.css"
         ]
     }
 }

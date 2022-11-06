@@ -10,27 +10,26 @@
     </record>
 
 	<template id="report_tax_invoice_document_new">
-
 		<t t-call="cells_report.cells_external_layout">
 			<t t-foreach="doc" t-as="o">
 				<div class="page" style="padding-top:45px">
-					<link rel="stylesheet" href="/e_tax_invoice_saudi_aio/static/src/css/style.css"/>
+					<link rel="stylesheet" href="/cells_report/static/src/css/style.css"/>
 					<t t-set="company" t-value="res_company"/>
 					<div class="font">
 					<div class="row mt32 mb32">
 						 <div class="col-6" style="margin-top:-28pt;">
-							 <table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
-									 <td style="font-weight: bold;text-align:left;">
+							 <table style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;" width="100%">
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+									 <td style="text-align:left;">
 										 <span class="text-right arabic"> Customer Information </span>
 									 </td>
-									 <td style="font-weight: bold;text-align:right;">
+									 <td style="text-align:right;">
 										 <span class="text-right arabic"> معلومات العميل </span>
 									 </td>
 								 </tr>
 								 <tr>
 									 <td colspan="2" class="text-center">
-										 <span style="font-weight: bold;text-align:right;">اسم العميل - </span>
+										 <span style="text-align:right;">اسم العميل - </span>
 										 <span t-field="o.partner_id.name"/><br/>
 										 <span t-field="o.partner_id.arabic_name"/>
 									 </td>
@@ -51,11 +50,11 @@
 						 </div>
 						 <div class="col-6" style="margin-top:-28pt;">
 							 <table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
-									 <td style="font-weight: bold;text-align:left;">
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+									 <td style="text-align:left;">
 										 <span class="text-right arabic"> Supplier Information </span>
 									 </td>
-									 <td style="font-weight: bold;text-align:right;">
+									 <td style="text-align:right;">
 										 <span class="text-right arabic">معلومات المورد</span>
 									 </td>
 								 </tr>
@@ -88,47 +87,48 @@
 						 </div>
 					</div>
 					<br/>
-					<table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-						 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
-							 <th style="border:1pt solid grey;">
+
+					<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
+						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+							 <td style="border:1pt solid grey;">
 								 <span style="text-align:left;">Cust ID</span><span style="text-align:right;">رقم العميل</span>
-							 </th>
-							 <th style="border:1pt solid grey;text-align:center;">
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
 								 <span style="text-align:left;">PO#</span><span style="text-align:right;">رقم الشراء</span>
-							 </th>
-							 <th style="border:1pt solid grey;text-align:center;">
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
 								 <span style="text-align:left;">Delivery Method</span><span style="text-align:right;">طريقة التوصيل</span>
-							 </th>
-							 <th style="border:1pt solid grey;text-align:center;">
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
 								 <span style="text-align:left;">SO#</span><span style="text-align:right;">طريقة التوصيل</span>
-							 </th>
-						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
 							 </td>
 						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:14px; margin-top:-10px;">
-							 <th style="border:1pt solid grey;text-align:center;" colspan="2">
+						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
+								 <span t-field="o.partner_id.id"/>
+							 </td>
+						 </tr>
+						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+							 <td style="border:1pt solid grey;text-align:center;" colspan="2">
 								  <span style="text-align:left;">Sales Rep</span><span style="text-align:right;">مندوب مبيعات</span>
-							 </th>
-							 <th style="border:1pt solid grey;text-align:center;">
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
 								  <span style="text-align:left;">payment Terms</span><span style="text-align:right;">شروط الدفع</span>
-							 </th>
-							 <th style="border:1pt solid grey;text-align:center;">
+							 </td>
+							 <td style="border:1pt solid grey;text-align:center;">
 								  <span style="text-align:left;">Ship to City</span><span style="text-align:right;">شحن إلى المدينة</span>
-							 </th>
+							 </td>
 						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;">
+						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 							 <td style="border:1pt solid grey;text-align:center;" colspan="2">
 								 <span t-field="o.invoice_user_id"/>
 							 </td>
@@ -142,37 +142,54 @@
 					</table>
 					<br/>
 
-					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black;">
-						<tr>
-							<td width="20%" class="col-6" style="border-bottom:1pt solid grey;font-size:12.4px;">Bank:
-								<span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
-								<br/>
-								<span t-field="o.bank_id.street" style="font-size: 12.4px;"/>
-								<span t-field="o.bank_id.street2" style="font-size: 12.4px;"/>
-								<span t-field="o.bank_id.country" style="font-size: 12.4px;"/>
-								<br/>ACC No:
-								<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
-								<br/>IBAN:
-								<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
-								<br/>Swift:
-								<span t-field="o.bank_id.swift" style="font-size: 12.4px;"></span>
-							</td>
-							<td width="30%" style="border-right:1pt solid grey;"/>
-							<td width="20%"
-								style="border-right:1pt solid grey; border-left:1pt solid grey; padding-top:15px;padding-left:4px; padding-right:4px;">
-								<img t-if="o.l10n_sa_qr_code_str"
-                 					t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 70, 70)"/>
-							</td>
-							<td width="20%" class="text-right"
-								style="border-right:1pt solid grey;border-bottom:1pt solid grey;">‫‪
-							</td>
-						</tr>
-					</table>
+					<div class="row mt32 mb32">
+						<div class="col-10">
+							<table style="border:1pt solid grey;width:100%;font-size:11px;" width="100%">
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px;">
+									 <td style="text-align:left;" colspan="2">
+										 Bank   :
+									 </td>
+									 <td style="text-align:center;">
+										 <span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
+									 </td>
+								 </tr>
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+									 <td style="text-align:left;" >
+										 <span t-field="o.bank_id.street" style="font-size: 12.4px;"/>
+									 </td>
+									 <td style="text-align:left;">
+										 <span t-field="o.bank_id.street2" style="font-size: 12.4px;"/>
+									 </td>
+									 <td style="text-align:left;">
+										 <span t-field="o.bank_id.country" style="font-size: 12.4px;"/>
+									 </td>
+								 </tr>
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+									 <td style="text-align:left;" colspan="3">
+										 ACC NO 	:	<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
+									 </td>
+								 </tr>
+								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+									 <td style="text-align:left;" colspan="3">
+										 IBAN   	:	<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
+									 </td>
+								 </tr>
+								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+									 <td style="text-align:left;" colspan="3">
+										 SWIFT  	:	<span t-field="o.bank_id.swift" style="font-size: 12.4px;"/>
+									 </td>
+								 </tr>
+							</table>
+						</div>
+						<div class="col-2">
+							<img t-if="o.l10n_sa_qr_code_str"
+								t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 70, 70)"/>
+						</div>
+					</div>
 
 					<br/><br/>
 
-
-					<table style="border:1pt solid grey;width:100%;color:black;font-size:11px; margin-top:-15pt; color:black;" class="table-condensed">
+					<table style="border:1pt solid grey;width:100%;color:black;font-size:12.4px; margin-top:-15pt; color:black;" class="table-condensed">
 						<thead>
 							<tr style="background-color:#DCDCDC">
 								<td width="25%" style="border:1pt solid grey;text-align:center;padding:2pt; ">Items<br/><span class="arabic">العناصر</span></td>
@@ -197,7 +214,8 @@
 					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.quantity) - l.price_subtotal)"/>
 						 		<td style="border-right:1pt solid grey;padding:3pt">
 						 			<span t-field="l.name"/> -
-						 			<span class="text-right arabic" t-esc="doc.get_product_arabic_name(l.product_id.id)"/>
+<!--						 			<span class="text-right arabic" t-esc="doc.get_product_arabic_name(l.product_id.id)"/>-->
+									<span class="text-right arabic" t-esc="l.with_context(lang='ar_001').product_id.name"/>
 						 			<br/>
 						 		</td>
 						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
@@ -229,12 +247,12 @@
 		               	</tbody>
 					</table>
 
-					<table style="border:1pt solid grey;width:100%;color:black;margin-top:8px;font-size:11px; color:black;" class="table table-bordered table-sm">
+					<table style="border:1pt solid grey;width:100%;color:black;margin-top:8px;font-size:12.4px; color:black;" class="table table-bordered table-sm">
 						<thead>
 							<tr>
 								<td width="33%" style="background-color:#DCDCDC;">Total Amounts</td>
-								<td width="33%" style="font-weight: bold;background-color:#DCDCDC;"/>
-								<td colspan="2" width="34%" style="font-weight: bold;background-color:#DCDCDC;" class="text-right arabic">المبالغ الإجمالية</td>
+								<td width="33%" style="background-color:#DCDCDC;"/>
+								<td colspan="2" width="34%" style="background-color:#DCDCDC;" class="text-right arabic">المبالغ الإجمالية</td>
 
 							</tr>
 							<t t-set="discount_before_total" t-value="doc.amount_untaxed + discount_total"/>
@@ -317,52 +335,29 @@
 					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black;color:black;" class="table table-bordered table-sm">
 						<thead>
 							<tr>
-								<td width="30%" style="font-weight: bold;background-color:#DCDCDC;">AMOUNT INVOICED</td>
-								<td width="70%" style="font-size:12px;font-weight: bold;"><span t-esc="doc.amount_total_words(doc.amount_total)"/></td>
+								<td width="30%" style="background-color:#DCDCDC;">AMOUNT INVOICED</td>
+								<td width="70%" style="font-size:12.4px;"><span t-esc="doc.amount_total_words(doc.amount_total)"/></td>
 							</tr>
 						</thead>
 					</table>
 
-					<span t-if="condition_type == 'pad'">
+					<span t-if="term">
 						<table>
-						<tr>
-							<td>
-								<span style="font-weight: bold; color:black;">Notes For Reference</span><br/><br/>
-								1 ) This Price is for Required Qty or More <br/>
-								2 ) Delivery time starting after 3 working weeks after payments
-								<span style="font-weight: bold; color:black;">Warranty Coverage</span>
-								One year Warranty against any manufacturing defect starting at the date of delivery.
+							<tr>
+								<span style="color:black;" t-field="term.name"/> <br/>
+							</tr>
+							<tr t-foreach="term.line_ids" t-as="line">
+								<tr>
+									<span style="color:black;" t-field="line.name"/> <br/>
+								</tr>
+								<tr t-foreach="line.val_ids" t-as="val">
+									<span style="color:black;" t-field="val.name"/><br/>
+								</tr>
 								<br/>
-								<span style="font-weight: bold; color:black;">XCEL Cooling Pad Specifications</span>
-								<br/><br/>
-								1 ) 100 % Virgin kraft paper <br/>
-								2 ) High Bonding Glue <br/>
-								3 ) High quality Chemical Resin <br/>
-
-							</td>
-						</tr>
-					</table>
+							</tr>
+						</table>
 					</span>
-					<span t-if="condition_type == 'cooler'">
-						<table>
-						<tr>
-							<td>
-								Delivery Time from 10 To 14 Working days after payments<br/><br/>
-								<span style="font-weight: bold; color:black;">CUSTOMER RESPONSIBILITY</span> <br/>
-								1 ) Electric and Water supply to coolers location.<br/>
-								2 ) Automatic water pump to insure water flow.<br/>
-								3 ) Water pressure.<br/>
-								4 ) Motor electric breakers.<br/><br/>
-								<span style="font-weight: bold; color:black;">WARRANTY COVERAGE</span> <br/>
-								1 ) 15 Years for Fiberglass body against manufacturing defects.<br/>
-								2 ) 2 Years for the electric &amp; mechanical parts against manufacturing defects.<br/>
-								3 ) Warranty coverage starts with delivery with full payment. <br/>
-
-							</td>
-						</tr>
-					</table>
-					</span>
-						<br/><br/>
+					<br/>
 					<span  style="padding-right:450pt;padding-top:30pt;">.............................Signature &amp;nbsp; إمضاء</span>
 
 				</div>

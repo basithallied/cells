@@ -10,7 +10,7 @@
     	</t>
 		<div class="header">
 	    	<table width="100%">
-	    		<link rel="stylesheet" href="/e_tax_invoice_saudi_aio/static/src/css/style.css"/>
+	    		<link rel="stylesheet" href="/cells_report/static/src/css/style.css"/>
 				<tr style="font-size:15px;font-weight: bold;">
 					<td width="35%">
 						<span t-field="o.name"/><br/>

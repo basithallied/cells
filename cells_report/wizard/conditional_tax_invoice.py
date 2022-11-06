@@ -13,6 +13,7 @@ class InvoiceConditionWizard(models.TransientModel):
     def print_report(self):
         invoice_id = self.env.context.get('active_ids', [])
         invoice = self.env['account.move'].browse(invoice_id)
+        print(invoice.l10n_sa_qr_code_str, "sddddddd")
         data = {
             'invoice_id': invoice.id,
             'condition_type': self.condition_type
@@ -27,14 +28,20 @@ class TaxInvoice(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        print(data)
         invoice = self.env['account.move'].browse(data['invoice_id'])
-        print(invoice)
-        print(data['condition_type'])
+        term = False
+        if data['condition_type'] == 'cooler':
+            cells_term_id = self.env['ir.config_parameter'].sudo().get_param('zin_sale_order.cooler_term_id')
+            term = self.env['cells.terms.conditions'].sudo().browse(int(cells_term_id))
+        elif data['condition_type'] == 'pad':
+            cells_term_id = self.env['ir.config_parameter'].sudo().get_param('zin_sale_order.pad_term_id')
+            term = self.env['cells.terms.conditions'].sudo().browse(int(cells_term_id))
+        print(term)
         return {
             'doc_ids': docids,
             'docs': invoice,
-            'condition_type': data['condition_type']
+            'condition_type': data['condition_type'],
+            'term': term
         }
 
 
