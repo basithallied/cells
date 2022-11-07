@@ -21,7 +21,7 @@
         'report/report_purchase_quotation.xml',
         'report/cells_invoice_layout.xml',
         'report/cells_vat_invoice_template.xml',
-        'report/report_saleorder_document.xml'
+        # 'report/report_saleorder_document.xml'
 
     ],
     'demo': [],

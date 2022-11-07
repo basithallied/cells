@@ -133,7 +133,7 @@
 								 <span t-field="o.invoice_user_id"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-								 <span></span>
+								 <span t-field="o.invoice_payment_term_id.name"></span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
 								 <span> </span>
@@ -363,7 +363,7 @@
 				</div>
 				</div>
 		</t>
-	 </t>
+	 	</t>
 	</template>
 
     <template id="report_conditional_vat_invoice">
