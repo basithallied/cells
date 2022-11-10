@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="cells_quotation_external_layout">
+		<t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"/>
+    	</t>
+    	<t t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company"/>
+    	</t>
+		<div class="header">
+	    	<table width="100%">
+	    		<link rel="stylesheet" href="/cells_report/static/src/css/style.css"/>
+<!--				<link rel="stylesheet" href="/cells_report/static/src/scss/english.css"/>-->
+<!--				<link rel="stylesheet" href="/cells_report/static/src/scss/arabic.css"/>-->
+				<tr style="font-size:15px;font-weight: bold;font-family: 'Arabic';" >
+					<td width="35%">
+						<span class="english" t-field="o.name"/><br/>
+						<span class="english" t-field="o.date_order"/>
+					</td>
+					<td width="30%">
+						<t t-if="o.state not in ['draft', 'sent']">
+							<td width="30%">
+								<span class="text-right arabic"> ترتيب </span><br/>
+								<span class="text-right english"> Order </span>
+							</td>
+						</t>
+						<t t-if="o.state in ['draft', 'sent']">
+							<td width="30%">
+								<span class="text-right arabic"> اقتباس </span><br/>
+								<span class="text-right english"> Quotation </span>
+							</td>
+						</t>
+					</td>
+					<td width="35%">
+						<img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+							 style="height: 60px;width: 250px; margin-top:15px; margin-bottom:-25px; " alt="Logo"/>
+					</td>
+				</tr>
+				<br/>
+			</table>
+			<br/>
+
+		</div>
+
+        <div class="article o_report_layout_standard">
+            <t t-raw="0" />
+        </div>
+        <div class="footer o_background_footer">
+            <div class="text-center" style="font-size:14px;"  >
+                <ul class="list-inline">
+					<li t-if="company.street" class="list-inline-item english"><i class="fa fa-home" role="img" aria-label="Home" title="Address"/> <span t-field="company.street"/>,<span t-field="company.country_id.name"/></li>
+                    <li t-if="company.phone" class="list-inline-item english"><i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"/> <span t-field="company.phone"/></li>
+                    <li t-if="company.email" class="list-inline-item english"><i class="fa fa-at" role="img" aria-label="Email" title="Email"/> <span t-field="company.email"/></li>
+                    <li t-if="company.website" class="list-inline-item english"><i class="fa fa-globe" role="img" aria-label="Website" title="Website"/> <span t-field="company.website"/></li>
+                    <li t-if="company.vat" class="list-inline-item english"><i class="fa fa-building-o" role="img" aria-label="Fiscal number"/><t t-esc="(company.country_id.vat_label or 'Tax ID').replace(' ','\N{NO-BREAK SPACE}')"/>: <span t-esc="company.vat.replace(' ','\N{NO-BREAK SPACE}')"/></li>
+                </ul>
+                <div t-field="company.report_footer"/>
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page:
+                    <span class="page"/>
+                    of
+                    <span class="topage"/>
+                </div>
+            </div>
+        </div>
+	</template>
+
+</odoo>

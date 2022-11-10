@@ -21,7 +21,8 @@
         'report/report_purchase_quotation.xml',
         'report/cells_invoice_layout.xml',
         'report/cells_vat_invoice_template.xml',
-        # 'report/report_saleorder_document.xml'
+        'report/cells_quotation_layout.xml',
+        'report/report_saleorder_document.xml'
 
     ],
     'demo': [],
@@ -30,7 +31,9 @@
     'application': True,
     "assets": {
         "web.assets_common": [
-            "cells_report/static/src/css/style.css"
-        ]
+            "cells_report/static/src/css/style.css",
+        ],
     }
+
+
 }
