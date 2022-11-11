@@ -243,6 +243,7 @@
 					</table>
 
 					<table style="border:1pt solid grey;width:100%;color:black;margin-top:8px;font-size:12.4px; color:black;" class="table table-bordered table-sm">
+<!--						added-->
 						<thead>
 							<tr>
 								<td width="33%" style="background-color:#DCDCDC;">Total Amounts</td>
