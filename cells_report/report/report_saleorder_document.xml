@@ -283,10 +283,13 @@
 
 <!--                                </t>-->
 							</tr>
-							<tr class="text-right">
-								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Taxable Amount (Excluding VAT)</td>
-								<td class="text-right" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ الخاضع للضريبة (غير شامل ضريبة القيمة المضافة)</td>
-								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
+<!--							commented-->
+<!--							<tr class="text-right">-->
+<!--								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Taxable Amount (Excluding VAT)</td>-->
+<!--								<td class="text-right" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ الخاضع للضريبة (غير شامل ضريبة القيمة المضافة)</td>-->
+<!--								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
+
+<!--							commented-->
 <!--                                <t t-if="doc.conversion_rates_new.name == 'SAR'">-->
 <!--									<td class="text-right"><span t-esc="'{0:,.2f}'.format(round((doc.amount_untaxed*doc.conversion_rates_new.con_rate),2))"></span> SAR</td></t>-->
 <!--								<t t-elif="doc.conversion_rates_new.name == 'USD'">-->
@@ -296,7 +299,7 @@
 <!--                                <t t-else="">-->
 
 <!--                                </t>-->
-							</tr>
+<!--							</tr>-->
 							<tr class="text-right">
 								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total VAT</td>
 								<td class="text-right" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي ضريبة القيمة المضافة</td>
@@ -312,7 +315,7 @@
 <!--                                </t>-->
 							</tr>
 							<tr class="text-right">
-								<td class="text-left english" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Amount Due</td>
+								<td class="text-left english" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Amount</td>
 								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ المستحق</td>
 								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>
 <!--                                <t t-if="doc.conversion_rates_new.name == 'SAR'">-->
