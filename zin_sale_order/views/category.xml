@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="category_master_form" model="ir.ui.view">
+        <field name="name">category.master.form</field>
+        <field name="model">category.master</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="category_master_tree" model="ir.ui.view">
+        <field name="name">category.master.tree</field>
+        <field name="model">category.master</field>
+        <field name="arch" type="xml">
+            <tree string="Category">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="category_master_action" model="ir.actions.act_window">
+        <field name="name">Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">category.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="category_master_tree"/>
+    </record>
+
+    <menuitem
+            id="menu_category_master"
+            name="Category"
+            parent="sale.menu_sale_config"
+            action="category_master_action"
+            sequence="2"/>
+
+
+</odoo>
