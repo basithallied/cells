@@ -27,6 +27,13 @@ class AccountMove(models.Model):
     new_tax_exclude_tree = fields.Char(string='Tax Excluded')
     new_tax_only = fields.Char(string='Tax Only')
 
+    # merlin added
+
+    category_ids = fields.Many2one('category.master', string="Category", tracking=True)
+    terms_condition_ids = fields.One2many('terms.description.desc', 'terms_condition_id',
+                                          string="Terms and Conditions", tracking=True)
+
+
     def _compute_new_tax_exclude(self):
         print("start computing")
         for rec in self:
@@ -366,3 +373,25 @@ class PurchaseOrder(models.Model):
         words_amount = self.company_id.currency_id.amount_to_text(amount)
         return words_amount
 
+class TermsAndConditionDescription(models.Model):
+    _name = 'terms.description.desc'
+    _rec_name = 'description'
+
+    description = fields.Char(string="Description", tracking=True)
+    terms_condition_id = fields.Many2one('sale.order', tracking=True)
+
+
+
+class TermsConditionMaster(models.Model):
+    _name = 'terms.condition.master'
+    _rec_name = 'category_id'
+
+    category_id = fields.Many2one('category.master', string="Category")
+    line_ids = fields.One2many('terms.condition.line', 'specification_id', string="Specification Line")
+
+class TermsConditionLine(models.Model):
+    _name = 'terms.condition.line'
+    _rec_name = 'name'
+
+    specification_id = fields.Many2one('terms.condition.master', string="Description")
+    name = fields.Char(string="Name", tracking=True)
