@@ -20,6 +20,23 @@ class SaleOrder(models.Model):
                                        string="Terms and Conditions", tracking=True)
 
 
+    @api.onchange('category_ids')
+    def onchange_update_description(self):
+        if self.category_ids:
+            self.terms_condition_ids = False
+            category_list = []
+            for category in self.category_ids:
+                category_list.append(category.id)
+            spec = self.env['terms.condition.master'].search([('category_id', 'in', category_list)])
+            vals = []
+            for val in spec:
+                spec_line = self.env['terms.condition.line'].search([('specification_id', '=', val.id)])
+                for val in spec_line:
+                    vals.append((0, 0, {'description': val.name}))
+            self.terms_condition_ids = vals
+
+
+
 # merlin added
 class TermsAndConditionDescription(models.Model):
     _name = 'terms.description.desc'
@@ -27,6 +44,7 @@ class TermsAndConditionDescription(models.Model):
 
     description = fields.Char(string="Description", tracking=True)
     terms_condition_id = fields.Many2one('sale.order', tracking=True)
+
 
 class CategoryMaster(models.Model):
     _name = 'category.master'
@@ -45,10 +63,8 @@ class TermsConditionLine(models.Model):
     _name = 'terms.condition.line'
     _rec_name = 'name'
 
-    specification_id = fields.Many2one('terms.condition.master', string="Specification")
+    specification_id = fields.Many2one('terms.condition.master', string="Description")
     name = fields.Char(string="Name", tracking=True)
-
-
 
 
 
@@ -57,3 +73,17 @@ class SaleOrderLine(models.Model):
 
     pad_id = fields.Many2one("product.product", "Pad")
     pad_qty = fields.Float("Pad Qty")
+    print(pad_qty,'zzzz')
+
+# commented
+# new function added
+#     @api.onchange('order_line')
+#     def _prepare_invoice_line(self):
+#         res = super(SaleOrderLine, self)._prepare_invoice_line()
+#         res.update({
+#             'description ': self.description
+#         })
+#         return res
+
+# ////////////
+
