@@ -19,6 +19,18 @@ class SaleOrder(models.Model):
     terms_condition_ids = fields.One2many('terms.description.desc', 'terms_condition_id',
                                        string="Terms and Conditions", tracking=True)
 
+    def _prepare_invoice(self):
+        res = super(SaleOrder, self)._prepare_invoice()
+        res.update({
+            'description': self.terms_condition_ids.description,
+            'category_ids': self.category_ids.id,
+        })
+        # print(self.category_ids.id, 'jgchfsdfad')
+        print(self.category_ids, 'kkkkkkkkkkkk')
+        print(self.terms_condition_ids.description, 'wwwwwwwwwwweeeeeeeeeeee')
+        return res
+
+
 
     @api.onchange('category_ids')
     def onchange_update_description(self):
@@ -73,17 +85,9 @@ class SaleOrderLine(models.Model):
 
     pad_id = fields.Many2one("product.product", "Pad")
     pad_qty = fields.Float("Pad Qty")
-    print(pad_qty,'zzzz')
 
-# commented
-# new function added
-#     @api.onchange('order_line')
-#     def _prepare_invoice_line(self):
-#         res = super(SaleOrderLine, self)._prepare_invoice_line()
-#         res.update({
-#             'description ': self.description
-#         })
-#         return res
+
+
 
 # ////////////
 

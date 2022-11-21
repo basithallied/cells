@@ -12,7 +12,7 @@
                 <page string="Terms and Conditions" name="project_spec">
                     <group>
                         <group>
-                            <field name="category_ids"/>
+                            <field name="category_ids" force_save="1"/>
                         </group>
 <!--                        <group>-->
 <!--                            <field name="edit_spec" invisible="1"/>-->
