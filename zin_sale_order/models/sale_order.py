@@ -19,16 +19,20 @@ class SaleOrder(models.Model):
     terms_condition_ids = fields.One2many('terms.description.desc', 'terms_condition_id',
                                        string="Terms and Conditions", tracking=True)
 
-    def _prepare_invoice(self):
-        res = super(SaleOrder, self)._prepare_invoice()
-        res.update({
-            'description': self.terms_condition_ids.description,
-            'category_ids': self.category_ids.id,
-        })
+    # def _prepare_invoice(self):
+    #     res = super(SaleOrderLine, self)._prepare_invoice()
+    #     print(self.category_ids, 'kkkkkkkkkkkk')
+    #     print(self.terms_condition_ids.description, 'wwwwwwwwwwweeeeeeeeeeee')
+    #     res.update({
+    #         'description': self.terms_condition_ids.description,
+    #         'category_ids': self.category_ids.id,
+    #     })
+    #     return res
         # print(self.category_ids.id, 'jgchfsdfad')
-        print(self.category_ids, 'kkkkkkkkkkkk')
-        print(self.terms_condition_ids.description, 'wwwwwwwwwwweeeeeeeeeeee')
-        return res
+        # 'terms_condition_ids.description': self.terms_condition_ids.description,
+        # 'category_ids': self.category_ids.id,
+
+
 
 
 
