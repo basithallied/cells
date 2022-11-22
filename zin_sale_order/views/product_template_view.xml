@@ -19,6 +19,9 @@
                     <label for="default_product"/>
                 </span>
             </div>
+            <xpath expr="//field[@name='detailed_type']" position='before'>
+                <field name="arabic_name"/>
+            </xpath>
         </field>
      </record>
 
