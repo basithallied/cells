@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <act_window name="Cooler Maintenance Report" id="act_cooler_maintenance_report_id"
-                res_model="cooler.maintenance.report.wizard"
-                view_mode="form" target="new"/>
+
+    <record id="act_cooler_maintenance_report_id" model="ir.actions.act_window">
+        <field name="name">Cooler Maintenance Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cooler.maintenance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_cooler_maintenance_report_form"/>
+        <field name="target">new</field>
+    </record>
 
     <record id="view_cooler_maintenance_report_form" model="ir.ui.view">
         <field name="name">Cooler Maintenance Report</field>

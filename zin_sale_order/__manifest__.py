@@ -23,9 +23,9 @@
         'views/reorder_cron.xml',
         'views/stock_move_inherit.xml',
         'views/res_config_settings.xml',
-        'views/cells_terms_view.xml',
-        'views/project_spec_master.xml',
-        'views/category.xml'
+        # 'views/cells_terms_view.xml',
+        # 'views/project_spec_master.xml',
+        # 'views/category.xml'
 
     ],
     'demo': [],

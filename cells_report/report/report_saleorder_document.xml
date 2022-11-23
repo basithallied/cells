@@ -312,17 +312,17 @@
 					<br/><br/>
 						<!-- 					merlin added -->
 
-					<div>
-						<span class="text-right english">Terms And Conditions</span>
-						<br/><br/>
-						<t t-set="the_count_no" t-value="0"/>
-						<tr t-foreach="o.terms_condition_ids" t-as="t">
-							<t t-set="the_count_no" t-value="the_count_no + 1"/>
-							<span t-esc="the_count_no"/>
-							<span style="padding-right:450pt;padding-top:30pt;" t-field="t.description"/>
-							<br/>
-						</tr>
-					</div>
+<!--					<div>-->
+<!--						<span class="text-right english">Terms And Conditions</span>-->
+<!--						<br/><br/>-->
+<!--						<t t-set="the_count_no" t-value="0"/>-->
+<!--						<tr t-foreach="o.terms_condition_ids" t-as="t">-->
+<!--							<t t-set="the_count_no" t-value="the_count_no + 1"/>-->
+<!--							<span t-esc="the_count_no"/>-->
+<!--							<span style="padding-right:450pt;padding-top:30pt;" t-field="t.description"/>-->
+<!--							<br/>-->
+<!--						</tr>-->
+<!--					</div>-->
 					<br><br/>
 					</br><br></br>
 					<span  style="padding-right:450pt;padding-top:30pt;">.............................Signature &amp;nbsp; إمضاء</span>

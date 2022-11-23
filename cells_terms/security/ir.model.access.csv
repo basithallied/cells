@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cells_terms_category,access.cells.terms.category,model_cells_terms_category,,1,1,1,1
+access_cells_terms_conditions,access.cells.terms.conditions,model_cells_terms_conditions,,1,1,1,1
+access_cells_terms_condition_lines,access.cells.terms.condition.lines,model_cells_terms_condition_lines,,1,1,1,1
+
+

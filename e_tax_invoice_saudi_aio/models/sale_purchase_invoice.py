@@ -29,9 +29,9 @@ class AccountMove(models.Model):
 
     # merlin added
 
-    category_ids = fields.Many2one('category.master', string="Category", tracking=True)
-    terms_condition_ids = fields.One2many('terms.description.desc', 'terms_condition_id',
-                                          string="Terms and Conditions", tracking=True)
+    # category_ids = fields.Many2one('category.master', string="Category", tracking=True)
+    # terms_condition_ids = fields.One2many('terms.description.desc', 'terms_condition_id',
+    #                                       string="Terms and Conditions", tracking=True)
 
 
     def _compute_new_tax_exclude(self):

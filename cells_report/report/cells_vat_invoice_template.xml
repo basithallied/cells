@@ -340,17 +340,14 @@
 						</thead>
 					</table>
 
-					<span t-if="term">
+					<span t-if="conditions">
 						<table>
-							<tr>
-								<span style="color:black;" t-field="term.name"/> <br/>
-							</tr>
-							<tr t-foreach="term.line_ids" t-as="line">
+							<tr t-foreach="conditions" t-as="term">
 								<tr>
-									<span style="color:black;" t-field="line.name"/> <br/>
+									<span style="color:black;" t-field="term.name"/> <br/>
 								</tr>
-								<tr t-foreach="line.val_ids" t-as="val">
-									<span style="color:black;" t-field="val.name"/><br/>
+								<tr t-foreach="term.line_ids" t-as="val">
+									<span style="color:black;" t-field="val.description"/><br/>
 								</tr>
 								<br/>
 							</tr>

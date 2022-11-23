@@ -5,5 +5,5 @@ from . import product_product
 from . import warehoues_orderpoint
 from . import stock_quant
 from . import stock_move
-from . import cells_terms
+# from . import cells_terms
 from . import res_config

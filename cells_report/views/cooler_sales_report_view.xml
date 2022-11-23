@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <act_window name="Cooler Sales Report" id="act_cooler_sales_report_id"
-                res_model="cooler.sales.report.wizard"
-                view_mode="form" target="new"/>
+
+    <record id="act_cooler_sales_report_id" model="ir.actions.act_window">
+        <field name="name">Cooler Sales Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cooler.sales.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_cooler_sales_report_form"/>
+        <field name="target">new</field>
+    </record>
 
     <record id="view_cooler_sales_report_form" model="ir.ui.view">
         <field name="name">Cooler Sales Report</field>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cells_term_category_form" model="ir.ui.view">
+        <field name="name">cells.terms.category.form</field>
+        <field name="model">cells.terms.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cells_term_category_tree" model="ir.ui.view">
+        <field name="name">cells.terms.category.tree</field>
+        <field name="model">cells.terms.category</field>
+        <field name="arch" type="xml">
+            <tree string="Category">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cells_term_category_action" model="ir.actions.act_window">
+        <field name="name">Terms Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cells.terms.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="cells_term_category_tree"/>
+    </record>
+
+    <menuitem
+            id="menu_cells_terms_category"
+            name="Terms Category"
+            parent="sale.menu_sale_config"
+            action="cells_term_category_action"
+            sequence="10"/>
+
+
+</odoo>
