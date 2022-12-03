@@ -22,7 +22,9 @@
         'report/cells_invoice_layout.xml',
         'report/cells_vat_invoice_template.xml',
         'report/cells_quotation_layout.xml',
-        'report/report_saleorder_document.xml'
+        'report/report_saleorder_document.xml',
+        'report/cells_purchase_layout.xml',
+        'report/report_purchaseorder_document.xml',
 
     ],
     'demo': [],
