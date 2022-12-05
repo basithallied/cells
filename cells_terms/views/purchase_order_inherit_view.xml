@@ -12,6 +12,10 @@
                     </group>
                 </page>
             </xpath>
+            <xpath expr="//group/group[1]/field[@name='partner_ref']" position="after">
+                <field name="shipping_method"/>
+            </xpath>
+
         </field>
      </record>
 </odoo>
