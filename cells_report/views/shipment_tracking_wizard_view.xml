@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="act_shipment_tracking_id" model="ir.actions.act_window">
-        <field name="name">Shipment Tracking Report</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">shipment.tracking.report.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_shipment_tracking_report_form"/>
-        <field name="target">new</field>
-    </record>
+
 
     <record id="view_shipment_tracking_report_form" model="ir.ui.view">
         <field name="name">Shipment Tracking Report</field>
@@ -35,6 +28,15 @@
                 </footer>
             </form>
         </field>
+    </record>
+
+    <record id="act_shipment_tracking_id" model="ir.actions.act_window">
+        <field name="name">Shipment Tracking Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">shipment.tracking.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_shipment_tracking_report_form"/>
+        <field name="target">new</field>
     </record>
 
     <menuitem id="menu_report_shipment_id" name="Shipment Tracking Report" action="act_shipment_tracking_id"

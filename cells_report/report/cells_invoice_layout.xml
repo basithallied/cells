@@ -16,10 +16,18 @@
 						<span t-field="o.name"/><br/>
 						<span t-field="o.invoice_date"/>
 					</td>
-					<td width="30%">
-						<span class="text-right arabic"> فاتورة ضريبية </span><br/>
-						<span class="text-right arabic"> Tax Invoice </span>
-					</td>
+					<t t-if="o.move_type not in ('in_invoice', 'in_refund')">
+						<td width="30%">
+							<span class="text-right arabic"> فاتورة ضريبية </span><br/>
+							<span class="text-right arabic"> Tax Invoice </span>
+						</td>
+					</t>
+					<t t-if="o.move_type in ('in_invoice', 'in_refund')">
+						<td width="30%">
+							<span class="text-right arabic"> فاتورة البائع </span><br/>
+							<span class="text-right arabic"> Vendor Bill </span>
+						</td>
+					</t>
 					<td width="35%">
 						<img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
 							 style="height: 60px;width: 250px; margin-top:15px; margin-bottom:-25px; " alt="Logo"/>

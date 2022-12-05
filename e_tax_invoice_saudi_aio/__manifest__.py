@@ -23,7 +23,6 @@
         # 'report/simpli_vat_invoice_report.xml',
         # 'report/simpli_vat_invoice_report_pos.xml',
         'views/sale_purchase_invoice_view.xml'
-
         # 'report/invoice_default_attach.xml',
     ],
     'price': 81,

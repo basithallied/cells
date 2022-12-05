@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="act_cooler_maintenance_report_id" model="ir.actions.act_window">
-        <field name="name">Cooler Maintenance Wizard</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">cooler.maintenance.report.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_cooler_maintenance_report_form"/>
-        <field name="target">new</field>
-    </record>
+
 
     <record id="view_cooler_maintenance_report_form" model="ir.ui.view">
         <field name="name">Cooler Maintenance Report</field>
@@ -33,6 +26,15 @@
                 </footer>
             </form>
         </field>
+    </record>
+
+    <record id="act_cooler_maintenance_report_id" model="ir.actions.act_window">
+        <field name="name">Cooler Maintenance Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cooler.maintenance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_cooler_maintenance_report_form"/>
+        <field name="target">new</field>
     </record>
 
     <menuitem id="menu_maintenance_sales_id" name="Cooler Maintenance Report" action="act_cooler_maintenance_report_id"
