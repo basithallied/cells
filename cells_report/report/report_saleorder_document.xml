@@ -2,7 +2,6 @@
 <odoo>
     <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
          <xpath expr='//t[@t-call="web.external_layout"]' position="replace">
-
              <t t-call="cells_report.cells_quotation_external_layout">
 			 <t t-foreach="doc" t-as="o">
 				<div class="page" style="padding-top:45px">
@@ -144,10 +143,12 @@
 								<td width="25%" style="border:1pt solid grey;text-align:center;padding:2pt; ">Items<br/><span class="arabic">العناصر</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit Price<br/><span class="arabic">سعر الوحدة</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">Quantity<br/><span class="arabic">الكمية</span></td>
-								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Taxable <br/> Amount<br/><span class="arabic">المبلغ الخاضع للضريبة</span></td>
-								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Discount<br/><span class="arabic">خصومات</span></td>
-								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:8%">Tax Rate<br/><span class="arabic">نسبة الضريبة</span></td>
-								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Tax Amount<br/><span class="arabic">مبلغ الضريبة</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Item <br/> Description<br/><span class="arabic">وصف السلعة
+
+</span></td>
+<!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Discount<br/><span class="arabic">خصومات</span></td>-->
+<!--								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:8%">Tax Rate<br/><span class="arabic">نسبة الضريبة</span></td>-->
+<!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Tax Amount<br/><span class="arabic">مبلغ الضريبة</span></td>-->
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Item Subtotal<br/>(Including VAT) <br/><span class="arabic">المجموع (شامل ضريبة القيمة المضافة)</span></td>
 							</tr>
 						</thead>
@@ -170,23 +171,23 @@
 						 		<td style="border-right:1pt solid grey;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>
 
 					 			<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-						 			<sapn t-esc="'{0:,.2f}'.format(l.price_unit * l.product_uom_qty)"/>
+									<sapn></sapn>
 						 		</td>
 
-						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt;"  >
-	                                <span t-field="l.discount"/> %
-	                             </td>
+<!--						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt;"  >-->
+<!--	                                <span t-field="l.discount"/> %-->
+<!--	                             </td>-->
 
-						 		<td style="border-right:1pt solid grey;padding:2pt;text-align:center;">
-						 			<t t-foreach="l.tax_id" t-as="t">
-						 				<span t-esc="'{0:,.2f}'.format(t.amount)"/> %
-					 				</t>
-					 				<span t-if="not l.tax_id">0.00 %</span>
-						 		</td>
-						 		<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-						 			<t t-set="line_tax_total" t-value="l.price_subtotal*line_tax_total/100"/>
-						 			<span t-esc="'{0:,.2f}'.format(line_tax_total)"/>
-						 		</td>
+<!--						 		<td style="border-right:1pt solid grey;padding:2pt;text-align:center;">-->
+<!--						 			<t t-foreach="l.tax_id" t-as="t">-->
+<!--						 				<span t-esc="'{0:,.2f}'.format(t.amount)"/> %-->
+<!--					 				</t>-->
+<!--					 				<span t-if="not l.tax_id">0.00 %</span>-->
+<!--						 		</td>-->
+<!--						 		<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
+<!--						 			<t t-set="line_tax_total" t-value="l.price_subtotal*line_tax_total/100"/>-->
+<!--						 			<span t-esc="'{0:,.2f}'.format(line_tax_total)"/>-->
+<!--						 		</td>-->
 						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt" >
 									<span t-esc="'{0:,.2f}'.format(l.price_total)"/>
 			                    </td>
