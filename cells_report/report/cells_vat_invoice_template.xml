@@ -108,7 +108,7 @@
 								 <span t-field="o.partner_id.id"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
+								 <span t-field="o.ref"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
 								 <span t-field="o.partner_id.id"/>
