@@ -170,7 +170,8 @@
 									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
 						 			<br/>
 						 		</td>
-								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;"><sapn t-field="l.name"/></td>
+								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
+									<sapn t-esc="l.name +' '+ l.product_id.description_sale"/></td>
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>
 
@@ -543,12 +544,30 @@
 					<span t-if="conditions">
 						<table>
 							<tr t-foreach="conditions" t-as="term">
-								<tr>
-									<span style="font-size:15px; font-weight: bold;" t-field="term.name"/><br/>
-								</tr>
-								<tr t-foreach="term.line_ids" t-as="val">
-									<span style="color:black;" t-field="val.description"/><br/>
-								</tr>
+								<t t-if="term.language == 'english'">
+									<tr>
+										<span style="font-size:15px; font-weight: bold;" t-field="term.name"/>
+										<br/>
+									</tr>
+									<tr t-foreach="term.line_ids" t-as="val">
+										<span style="color:black;" t-field="val.description"/>
+										<br/>
+									</tr>
+								</t>
+								<t t-if="term.language == 'arabic'">
+									<div style="text-align:right;">
+										<tr>
+											<span style="font-size:15px; float:right; font-weight: bold;"
+												  t-field="term.name"/>
+											<br/>
+										</tr>
+										<tr t-foreach="term.line_ids" t-as="val">
+											<span style="color:black; float:right;" t-field="val.description"/>
+											<br/>
+										</tr>
+									</div>
+								</t>
+
 								<br/>
 							</tr>
 						</table>

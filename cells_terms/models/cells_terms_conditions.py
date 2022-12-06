@@ -8,6 +8,7 @@ class TermsConditions(models.Model):
     name = fields.Char("Name")
     term_category_id = fields.Many2one('cells.terms.category', "Category", required=True)
     line_ids = fields.One2many('cells.terms.condition.lines', 'term_id', "Term Lines")
+    language = fields.Selection([('english', 'English'), ('arabic', 'Arabic')], 'Language', default='english')
 
 
 class TermsConditionsLines(models.Model):

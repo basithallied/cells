@@ -12,6 +12,9 @@
                             <field name="name"/>
                             <field name="term_category_id"/>
                         </group>
+                        <group>
+                            <field name="language"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
