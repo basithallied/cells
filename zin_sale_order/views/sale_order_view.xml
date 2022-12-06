@@ -12,6 +12,11 @@
             <xpath expr="//field[@name='client_order_ref']" position="attributes">
                 <attribute name="string">Customer PO</attribute>
             </xpath>
+<!--            merlin added-->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="ship_to_city"/>
+            </xpath>
+
 
 
 <!--            <xpath expr="//page[@name='order_lines']" position="after">-->

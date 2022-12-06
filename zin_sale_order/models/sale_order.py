@@ -4,6 +4,9 @@ from odoo import api, fields, models, SUPERUSER_ID, _
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+# merlin added
+    ship_to_city = fields.Char('Ship To City')
+
     @api.model_create_multi
     def create(self, vals):
         if vals[0]['is_maintenance']:

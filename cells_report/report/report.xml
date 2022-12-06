@@ -1,0 +1,9 @@
+<odoo>
+    <report id="action_report_quotation"
+                string="Quotation / Order Arabic"
+                model="sale.order"
+                report_type="qweb-pdf"
+                name="cells_report.quotation_arabic"
+                print_report_name="'Quotation / Order Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
+                file="cells_report.quotation_arabic"/>
+</odoo>

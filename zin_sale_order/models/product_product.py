@@ -8,3 +8,8 @@ class ProductProduct(models.Model):
         if self.env.user.has_group('zin_sale_order.cells_user_inventory_adjustment'):
             res = super(ProductProduct, self).action_open_quants()
             return res
+
+class ProductProduct(models.Model):
+    _inherit = "product.template"
+
+    arabic_desc = fields.Text(string="Arabic Description")
