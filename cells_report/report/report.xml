@@ -7,6 +7,15 @@
                 print_report_name="'Quotation / Order Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
                 file="cells_report.quotation_arabic"/>
 
+    <report id="action_report_purchase"
+                string="Purchase Order Arabic"
+                model="purchase.order"
+                report_type="qweb-pdf"
+                name="cells_report.purchaseorder_arabic"
+                print_report_name="'Purchase Order Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
+                file="cells_report.purchaseorder_arabic"/>
+
+
     <report id="action_report_invoice_arabic"
                 string="Invoice Arabic"
                 model="account.move"
@@ -14,4 +23,5 @@
                 name="cells_report.report_invoice_arabic"
                 print_report_name="'Invoice Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
                 file="cells_report.report_invoice_arabic"/>
+
 </odoo>

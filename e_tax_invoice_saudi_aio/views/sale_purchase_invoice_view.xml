@@ -8,6 +8,13 @@
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
 
+        <!--            merlin added-->
+            <xpath expr="//field[@name='payment_reference']" position="after">
+                <field name="ship_to_city"/>
+            </xpath>
+
+
+
 <!--            <xpath expr="//page[@id='invoice_tab']" position="after">-->
 <!--                <page string="Terms and Conditions" name="project_spec">-->
 <!--                    <group>-->

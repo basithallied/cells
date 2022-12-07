@@ -136,7 +136,7 @@
 								 <span t-field="o.invoice_payment_term_id.name"></span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-<!--								 <span t-field="o.ship_to_city"/>-->
+								 <span t-field="o.ship_to_city"/>
 							 </td>
 						 </tr>
 					</table>

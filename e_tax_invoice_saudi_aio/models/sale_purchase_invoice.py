@@ -14,6 +14,9 @@ from datetime import timedelta, datetime
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
+    # merlin added
+    ship_to_city = fields.Char('Ship To City')
+
     arabic_name = fields.Char(string='Arabic Name')
     arabic_relate = fields.Char('Relate')
     date_due = fields.Date('Date Due')

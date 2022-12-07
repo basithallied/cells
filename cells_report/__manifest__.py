@@ -28,7 +28,8 @@
         'report/report_saleorder_arabic.xml',
         'report/report.xml',
         'report/cells_vendor_bill_report.xml',
-        'report/invoice_report_arabic.xml'
+        'report/invoice_report_arabic.xml',
+        'report/report_purchaseorder_arabic.xml'
 
     ],
     'demo': [],

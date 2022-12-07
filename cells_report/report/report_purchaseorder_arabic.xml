@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<template id="classic_report_purchaseorder_document">
+    <template id="purchaseorder_arabic_document">
 		<t t-call="cells_report.cells_purchase_external_layout">
-<!--			<t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>-->
-<!--			<div class="page">-->
-				<div class="page" style="padding-top:45px">
+			<div class="page" style="padding-top:45px">
 					<link rel="stylesheet" href="/cells_report/static/src/css/style.css"/>
 					<link rel="stylesheet" href="/cells_report/static/src/scss/english.css"/>
 					<link rel="stylesheet" href="/cells_report/static/src/scss/arabic.css"/>
@@ -170,11 +168,9 @@
 									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
 						 			<br/>
 						 		</td>
-
 								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
 <!--									<sapn t-esc="l.name +' '+ l.product_id.description_sale"/>-->
 								</td>
-
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>
 
@@ -562,12 +558,12 @@
 										<tr>
 											<span style="font-size:15px; float:right; font-weight: bold;"
 												  t-field="term.name"/>
+											<br/>
 										</tr>
-										<br/>
 										<tr t-foreach="term.line_ids" t-as="val">
 											<span style="color:black; float:right;" t-field="val.description"/>
+											<br/>
 										</tr>
-										<br/>
 									</div>
 								</t>
 
@@ -593,5 +589,15 @@
 				</t>
 			</t>
         </xpath>
-    </template>
+
+	</template>
+
+	<template id="purchaseorder_arabic">
+	    <t t-call="web.html_container">
+	        <t t-foreach="docs" t-as="o">
+	            <t t-call="cells_report.purchaseorder_arabic_document"/>
+	        </t>
+	    </t>
+	</template>
+
 </odoo>
