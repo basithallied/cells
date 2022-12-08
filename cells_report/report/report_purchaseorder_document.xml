@@ -172,7 +172,7 @@
 						 		</td>
 
 								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-<!--									<sapn t-esc="l.name +' '+ l.product_id.description_sale"/>-->
+									<sapn t-esc="l.product_id.description_sale"/>
 								</td>
 
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>

@@ -12,5 +12,17 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="product_product_normal_website_form_view_info">
+        <field name="name">product.product.normal.view.info</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description_sale']" position="after">
+                <field name="arabic_desc"/>
+            </xpath>
+
+        </field>
+    </record>
+
 
 </odoo>
