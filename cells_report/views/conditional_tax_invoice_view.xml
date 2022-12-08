@@ -29,8 +29,8 @@
             <xpath expr="//button[@name='button_cancel']" position='after'>
                 <button name="print_conditional_invoice" class="oe_highlight" string="Saudi VAT Invoice" type="object"
                 attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
-<!--                <button name="print_conditional_invoice_arabic" class="oe_highlight" string="Saudi VAT Invoice Arabic" type="object"-->
-<!--                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>-->
+                <button name="print_conditional_invoice_arabic" class="oe_highlight" string="Saudi VAT Invoice Arabic" type="object"
+                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
             </xpath>
             <xpath expr="//button[@name='button_cancel']" position='after'>
                 <button name="print_vendor_bill" class="oe_highlight" string="Vendor Bill" type="object"
