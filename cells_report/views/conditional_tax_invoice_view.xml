@@ -35,6 +35,8 @@
             <xpath expr="//button[@name='button_cancel']" position='after'>
                 <button name="print_vendor_bill" class="oe_highlight" string="Vendor Bill" type="object"
                 attrs="{'invisible': [('move_type', 'in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
+                <button name="print_vendor_bill_arabic" class="oe_highlight" string="Vendor Bill Arabic" type="object"
+                attrs="{'invisible': [('move_type', 'in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
             </xpath>
         </field>
      </record>

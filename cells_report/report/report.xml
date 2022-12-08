@@ -25,6 +25,15 @@
                 file="cells_report.report_invoice_arabic"/>
 
 
+    <report id="action_report_vendor_arabic"
+                string="Vendor Arabic"
+                model="account.move"
+                report_type="qweb-pdf"
+                name="cells_report.report_vendor_arabic"
+
+                print_report_name="'Vendor Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
+                file="cells_report.report_vendor_arabic"
+    />
 
 
     <record id="purchase.report_purchase_quotation" model="ir.actions.report">

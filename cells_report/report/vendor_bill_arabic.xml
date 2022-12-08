@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_invoice_arabic_document">
+    <template id="report_tax_vendor_document_new">
 		<t t-call="cells_report.cells_external_layout">
 			<t t-foreach="doc" t-as="o">
 				<div class="page" style="padding-top:45px">
@@ -12,7 +12,7 @@
 							 <table style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;" width="100%">
 								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 									 <td style="text-align:left;">
-										 <span class="text-right arabic"> Customer Information </span>
+										 <span class="text-right arabic"> Supplier Information </span>
 									 </td>
 									 <td style="text-align:right;">
 										 <span class="text-right arabic"> معلومات العميل </span>
@@ -43,7 +43,7 @@
 							 <table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;" width="100%">
 								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 									 <td style="text-align:left;">
-										 <span class="text-right arabic"> Supplier Information </span>
+										 <span class="text-right arabic"> Customer Information </span>
 									 </td>
 									 <td style="text-align:right;">
 										 <span class="text-right arabic">معلومات المورد</span>
@@ -82,7 +82,7 @@
 					<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
 						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 							 <td style="border:1pt solid grey;">
-								 <span style="text-align:left;">Cust ID</span><span style="text-align:right;">رقم العميل</span>
+								 <span style="text-align:left;">Vendor ID</span><span style="text-align:right;">رقم العميل</span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
 								 <span style="text-align:left;">PO#</span><span style="text-align:right;">رقم الشراء</span>
@@ -91,7 +91,7 @@
 								 <span style="text-align:left;">Delivery Method</span><span style="text-align:right;">طريقة التوصيل</span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-								 <span style="text-align:left;">SO#</span><span style="text-align:right;">طلب المبيعات</span>
+								 <span style="text-align:left;">SO#</span><span style="text-align:right;">طريقة التوصيل</span>
 							 </td>
 						 </tr>
 						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
@@ -99,7 +99,7 @@
 								 <span t-field="o.partner_id.id"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.ref"/>
+								 <span t-field="o.partner_id.id"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
 								 <span t-field="o.partner_id.id"/>
@@ -127,7 +127,7 @@
 								 <span t-field="o.invoice_payment_term_id.name"></span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-<!--								 <span t-field="o.ship_to_city"/>-->
+								 <span> </span>
 							 </td>
 						 </tr>
 					</table>
@@ -187,10 +187,6 @@
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Item <br/> Description<br/><span class="arabic">وصف السلعة</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit Price<br/><span class="arabic">سعر الوحدة</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">Quantity<br/><span class="arabic">الكمية</span></td>
-<!--								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Taxable <br/> Amount<br/><span class="arabic">المبلغ الخاضع للضريبة</span></td>-->
-<!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Discount<br/><span class="arabic">خصومات</span></td>-->
-<!--								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:8%">Tax Rate<br/><span class="arabic">نسبة الضريبة</span></td>-->
-<!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Tax Amount<br/><span class="arabic">مبلغ الضريبة</span></td>-->
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Item Subtotal<br/>(Including VAT) <br/><span class="arabic">المجموع (شامل ضريبة القيمة المضافة)</span></td>
 							</tr>
 						</thead>
@@ -205,36 +201,15 @@
 					 			</t>
 					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.quantity) - l.price_subtotal)"/>
 						 		<td style="border-right:1pt solid grey;padding:3pt">
+						 			<span t-field="l.name"/> -
 									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
 						 			<br/>
 						 		</td>
-
 								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-									<sapn t-field="l.product_id.product_tmpl_id.arabic_desc"/>
+								<sapn t-field="l.product_id.arabic_desc"/>
 						 		</td>
-
-
 						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
 						 		<td style="border-right:1pt solid grey;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.quantity)"/></td>
-
-<!--					 			<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
-<!--						 			<sapn t-esc="'{0:,.2f}'.format(l.price_unit * l.quantity)"/>-->
-<!--						 		</td>-->
-
-<!--						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt;"  >-->
-<!--	                                <span t-field="l.discount"/> %-->
-<!--	                             </td>-->
-
-<!--						 		<td style="border-right:1pt solid grey;padding:2pt;text-align:center;">-->
-<!--						 			<t t-foreach="l.tax_ids" t-as="t">-->
-<!--						 				<span t-esc="'{0:,.2f}'.format(t.amount)"/> %-->
-<!--					 				</t>-->
-<!--					 				<span t-if="not l.tax_ids">0.00 %</span>-->
-<!--						 		</td>-->
-<!--						 		<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
-<!--						 			<t t-set="line_tax_total" t-value="l.price_subtotal*line_tax_total/100"/>-->
-<!--						 			<span t-esc="'{0:,.2f}'.format(line_tax_total)"/>-->
-<!--						 		</td>-->
 						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt" >
 									<span t-esc="'{0:,.2f}'.format(l.price_total)"/>
 			                    </td>
@@ -338,7 +313,7 @@
 					</table>
 						<br></br>
 
-						<t t-set="conditions" t-value="o.get_conditions(o.terms_category_id)"/>
+				<t t-set="conditions" t-value="o.get_conditions(o.terms_category_id)"/>
 					<span t-if="conditions">
 						<table>
 							<tr t-foreach="conditions" t-as="term">
@@ -374,7 +349,6 @@
 
 
 
-
 					<span  style="padding-right:450pt;padding-top:30pt;">.............................Signature &amp;nbsp; إمضاء</span>
 
 				</div>
@@ -383,11 +357,14 @@
 	 	</t>
 	</template>
 
-    <template id="report_invoice_arabic">
-	    <t t-call="web.html_container">
-	        <t t-foreach="docs" t-as="doc">
-	            <t t-call="cells_report.report_invoice_arabic_document"/>
+
+
+    <template id="report_vendor_arabic">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+	            <t t-call="cells_report.report_tax_vendor_document_new"/>
 	        </t>
-	    </t>
-	</template>
+        </t>
+    </template>
+
 </odoo>
