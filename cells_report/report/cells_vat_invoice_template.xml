@@ -215,7 +215,7 @@
 					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.quantity) - l.price_subtotal)"/>
 						 		<td style="border-right:1pt solid grey;padding:3pt">
 						 			<span t-field="l.product_id.name"/> -
-									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
+<!--									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>-->
 						 			<br/>
 						 		</td>
 
