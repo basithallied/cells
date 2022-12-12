@@ -114,7 +114,7 @@
 								 <span t-field="o.partner_id.id"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
+								 <span t-field="o.invoice_origin"/>
 							 </td>
 						 </tr>
 						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">

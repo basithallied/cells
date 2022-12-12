@@ -4,7 +4,6 @@ from odoo import api, fields, models, SUPERUSER_ID, _
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-
     def print_conditional_invoice(self):
         invoice = self.env['account.move'].search([('id', '=', self.id)])
         data = {
