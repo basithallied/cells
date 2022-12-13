@@ -102,7 +102,7 @@
 								 <span t-field="o.ref"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
+								 <span t-field="o.new_picking_policy"/>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
 								 <span t-field="o.invoice_origin"/>
@@ -127,7 +127,7 @@
 								 <span t-field="o.invoice_payment_term_id.name"></span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
-<!--								 <span t-field="o.ship_to_city"/>-->
+								 <span t-field="o.ship_to_city"/>
 							 </td>
 						 </tr>
 					</table>
