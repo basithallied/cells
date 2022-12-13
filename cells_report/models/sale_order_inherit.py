@@ -4,6 +4,7 @@ from odoo import api, fields, models, SUPERUSER_ID, _
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+    bank_id = fields.Many2one('res.bank', string='Bank')
 
     def get_conditions(self, terms_category_id):
         conditions = False
