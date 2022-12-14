@@ -11,6 +11,7 @@ class PurchaseOrder(models.Model):
         states={'draft': [('readonly', False)], 'sent': [('readonly', False)]}
         ,help="If you deliver all products at once, the delivery order will be scheduled based on the greatest "
         "product lead time. Otherwise, it will be based on the shortest.")
+    customer_so = fields.Char('Customer SO')
     def get_conditions(self, terms_category_id):
         conditions = False
         if terms_category_id:

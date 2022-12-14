@@ -68,6 +68,7 @@
 <!--merlin added-->
             <xpath expr="//field[@name='partner_ref']" position='after'>
                 <field name="purchase_picking_policy"/>
+                <field name="customer_so"/>
             </xpath>
 
         </field>
