@@ -33,4 +33,12 @@ class PurchaseOrder(models.Model):
     date_planned = fields.Datetime(tracking=True,
         string='Receipt Date', index=True, copy=False, compute='_compute_date_planned', store=True, readonly=False,
         help="Delivery date promised by vendor. This date is used to determine expected arrival of products.")
+    purchase_picking_policy = fields.Selection([
+        ('direct', 'As soon as possible'),
+        ('one', 'When all products are ready')],
+        string='Shipping Policy', required=True, readonly=True, default='direct',
+        states={'draft': [('readonly', False)], 'sent': [('readonly', False)]}
+        , help="If you deliver all products at once, the delivery order will be scheduled based on the greatest "
+               "product lead time. Otherwise, it will be based on the shortest.")
+    customer_so = fields.Char('Customer SO')
 
