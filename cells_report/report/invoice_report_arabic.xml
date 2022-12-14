@@ -210,7 +210,7 @@
 						 		</td>
 
 								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-									<sapn t-field="l.product_id.product_tmpl_id.arabic_desc"/>
+									<sapn t-field="l.product_id.arabic_desc"/>
 						 		</td>
 
 						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
