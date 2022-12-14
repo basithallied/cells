@@ -11,4 +11,6 @@ class SaleInvoice(models.Model):
             invoice_vals['new_picking_policy'] = 'As soon as possible'
         else:
             invoice_vals['new_picking_policy'] = 'When products are ready'
+        if self.ship_to_city:
+            invoice_vals['new_ship_to_city'] = self.ship_to_city
         return invoice_vals

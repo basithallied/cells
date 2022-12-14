@@ -15,7 +15,7 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
     # merlin added
-    ship_to_city = fields.Char('Ship To City')
+    new_ship_to_city = fields.Char('Ship To City')
     new_picking_policy = fields.Char('Shipping Policy')
 
     arabic_name = fields.Char(string='Arabic Name')

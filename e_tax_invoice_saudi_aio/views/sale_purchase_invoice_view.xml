@@ -10,7 +10,7 @@
 
         <!--            merlin added-->
             <xpath expr="//field[@name='payment_reference']" position="after">
-                <field name="ship_to_city"/>
+                <field name="new_ship_to_city"/>
                 <field name="new_picking_policy"/>
             </xpath>
 
