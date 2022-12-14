@@ -85,7 +85,7 @@
 					<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
 						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 							 <td style="border:1pt solid grey;">
-								 <span style="text-align:left;" class="english">Cust ID</span><span style="text-align:right;" class="arabic">رقم العميل</span>
+								 <span style="text-align:left;" class="english">Sup ID</span><span style="text-align:right;" class="arabic">رقم المورد</span>
 							 </td>
 							 <td style="border:1pt solid grey;text-align:center;">
 								 <span style="text-align:left;">PO#</span><span style="text-align:right;">رقم الشراء</span>
