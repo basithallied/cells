@@ -28,7 +28,7 @@
 						<t t-if="o.state in ['draft', 'sent']">
 							<td width="30%">
 								<span class="text-right arabic"> اقتباس </span><br/>
-								<span class="text-right english"> Quotation </span>
+								<span class="text-right english">RFQ</span>
 							</td>
 						</t>
 					</td>
