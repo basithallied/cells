@@ -141,33 +141,33 @@
 										 Bank   :
 									 </td>
 									 <td style="text-align:center;">
-										 <span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
+										 <span t-field="o.company_id.bank_id.name" style="font-size: 12.4px;"/>
 									 </td>
 								 </tr>
 								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 									 <td style="text-align:left;" >
-										 <span t-field="o.bank_id.street" style="font-size: 12.4px;"/>
+										 <span t-field="o.company_id.bank_id.street" style="font-size: 12.4px;"/>
 									 </td>
 									 <td style="text-align:left;">
-										 <span t-field="o.bank_id.street2" style="font-size: 12.4px;"/>
+										 <span t-field="o.company_id.bank_id.street2" style="font-size: 12.4px;"/>
 									 </td>
 									 <td style="text-align:left;">
-										 <span t-field="o.bank_id.country" style="font-size: 12.4px;"/>
+										 <span t-field="o.company_id.bank_id.country" style="font-size: 12.4px;"/>
 									 </td>
 								 </tr>
 								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 									 <td style="text-align:left;" colspan="3">
-										 ACC NO 	:	<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
+										 ACC NO 	:	<span t-field="o.company_id.bank_id.acc_no" style="font-size: 12.4px;"/>
 									 </td>
 								 </tr>
 								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 									 <td style="text-align:left;" colspan="3">
-										 IBAN   	:	<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
+										 IBAN   	:	<span t-field="o.company_id.bank_id.iban" style="font-size: 12.4px;"/>
 									 </td>
 								 </tr>
 								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 									 <td style="text-align:left;" colspan="3">
-										 SWIFT  	:	<span t-field="o.bank_id.swift" style="font-size: 12.4px;"/>
+										 SWIFT  	:	<span t-field="o.company_id.bank_id.swift" style="font-size: 12.4px;"/>
 									 </td>
 								 </tr>
 							</table>

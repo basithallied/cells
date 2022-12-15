@@ -12,3 +12,7 @@ class SaleOrder(models.Model):
             conditions = self.env['cells.terms.conditions'].search([('term_category_id', '=', terms_category_id.id)])
             return conditions
         return conditions
+class ResCompany(models.Model):
+    _inherit = "res.company"
+
+    bank_id = fields.Many2one('res.bank', string='Bank')
