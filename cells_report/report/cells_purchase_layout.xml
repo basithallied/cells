@@ -21,7 +21,7 @@
 					<td width="30%">
 						<t t-if="o.state not in ['draft', 'sent']">
 							<td width="30%">
-								<span class="text-right arabic"> ترتيب </span><br/>
+								<span class="text-right arabic">أمر شراء</span><br/>
 								<span class="text-right english"> Purchase Order </span>
 							</td>
 						</t>
