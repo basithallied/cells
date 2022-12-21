@@ -22,7 +22,9 @@
                 report_type="qweb-pdf"
                 name="cells_report.report_invoice_arabic"
                 print_report_name="'Invoice Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
-                file="cells_report.report_invoice_arabic"/>
+                file="cells_report.report_invoice_arabic"
+                menu='False'
+    />
 
 
     <report id="action_report_vendor_arabic"
@@ -33,6 +35,7 @@
 
                 print_report_name="'Vendor Arabic - %s - %s' % (object.partner_id.name or '', object.name)"
                 file="cells_report.report_vendor_arabic"
+                menu = 'False'
     />
 
 
