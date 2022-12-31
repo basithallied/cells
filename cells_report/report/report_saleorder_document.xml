@@ -22,21 +22,21 @@
 									 </td>
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
-										 <span style="text-align:right;">اسم العميل - </span>
+									 <td colspan="2" class="text-left">
+										 <span style="text-align:left;">اسم العميل - </span>
 										 <span class="english" t-field="o.partner_id.name"/><br/>
 										 <span class="arabic" t-field="o.partner_id.arabic_name"/>
 									 </td>
 
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
+									 <td colspan="2" class="text-left">
 										 <span class="english" t-field="o.partner_id.city"/>
 										 <span class="arabic" t-field="o.partner_id.state_id.name"/>
 									 </td>
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
+									 <td colspan="2" class="text-left">
 										 <span class="english" t-field="o.partner_id.vat"/>
 									 </td>
 								 </tr>
@@ -53,26 +53,26 @@
 									 </td>
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
+									 <td colspan="2" class="text-left">
 										 <span class="english" t-field="o.company_id.name"/>
 										 <span class="english" t-field="o.company_id.arabic_name"/>
 									 </td>
 
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
+									 <td colspan="2" class="text-left">
 										 <span class="english">VAT # </span>
 										 <span class="english" t-field="o.company_id.vat"/>
 									 </td>
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
+									 <td colspan="2" class="text-left">
 										 <span class="english">WEBSITE # </span>
 										 <span class="english" t-field="o.company_id.website"/>
 									 </td>
 								 </tr>
 								 <tr>
-									 <td colspan="2" class="text-center">
+									 <td colspan="2" class="text-left">
 										 <span class="english">EMAIL # </span>
 										 <span class="english" t-field="o.company_id.email"/>
 									 </td>
@@ -84,17 +84,29 @@
 
 					<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
 						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-							 <td style="border:1pt solid grey;">
-								 <span style="text-align:left;" class="english">Cust ID</span><span style="text-align:right;" class="arabic">رقم العميل</span>
+							 <td style="border:1pt solid grey; border-right:1pt solid white;">
+								 <span style="text-align:left;">Cust ID</span>
 							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span style="text-align:left;">PO#</span><span style="text-align:right;">رقم الشراء</span>
+							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
+								 <span class="text-align:right;">رقم العميل</span>
 							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span style="text-align:left;">Delivery Method</span><span style="text-align:right;">طريقة التوصيل</span>
+							 <td style="border:1pt solid grey; border-right:1pt solid white;">
+								 <span style="text-align:left;">PO#</span>
 							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span style="text-align:left;">SO#</span><span style="text-align:right;">طلب المبيعات</span>
+							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
+								 <span style="text-align:right;">رقم الشراء</span>
+							 </td>
+							 <td style="border:1pt solid grey; border-right:1pt solid white;">
+								 <span style="text-align:left;">Delivery Method</span>
+							 </td>
+							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
+								 <span style="text-align:right;">طريقة التوصيل</span>
+							 </td>
+							 <td style="border:1pt solid grey; border-right:1pt solid white;">
+								 <span style="text-align:left;">SO#</span>
+							 </td>
+							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
+								 <span style="text-align:right;">طلب المبيعات</span>
 							 </td>
 						 </tr>
 						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
