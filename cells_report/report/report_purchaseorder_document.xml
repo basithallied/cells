@@ -230,7 +230,7 @@
 <!--							<t t-set="discount_before_total" t-value="doc.amount_untaxed + discount_total"/>-->
 							<tr class="text-right">
 								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total (Excluding VAT)</td>
-								<td class="text-right" style="border-right:1pt solid grey;text-align:right;padding:3pt">الإجمالي (غير شامل ضريبة القيمة المضافة)</td>
+								<td class="text-left" style="border-right:1pt solid grey;text-align:right;padding:3pt">الإجمالي (غير شامل ضريبة القيمة المضافة)</td>
 <!--                                <td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="discount_before_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
 								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="o.amount_untaxed"/></td>
 							</tr>
@@ -241,13 +241,13 @@
 <!--							</tr>-->
 							<tr class="text-right">
 								<td class="text-left" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total VAT</td>
-								<td class="text-right" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي ضريبة القيمة المضافة</td>
+								<td class="text-left" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي ضريبة القيمة المضافة</td>
 								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="o.amount_tax"/></td>
 <!--								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="round(doc.amount_total - doc.amount_untaxed,2)" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
 							</tr>
 							<tr class="text-right">
 								<td class="text-left english" style="border-right:1pt solid grey;text-align:left;padding:3pt">Total Amount</td>
-								<td class="text-right arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ المستحق</td>
+								<td class="text-left arabic" style="border-right:1pt solid grey;text-align:right;padding:3pt">إجمالي المبلغ المستحق</td>
 								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="o.amount_total"/></td>
 
 <!--								<td style="border-right:1pt solid grey;text-align:right;padding:3pt" class="text-right"><span t-esc="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/></td>-->
