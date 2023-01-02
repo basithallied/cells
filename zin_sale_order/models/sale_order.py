@@ -6,6 +6,7 @@ class SaleOrder(models.Model):
 
 # merlin added
     ship_to_city = fields.Char('Ship To City')
+    bank_id = fields.Many2one('res.bank', string='Bank')
 
     @api.model_create_multi
     def create(self, vals):
