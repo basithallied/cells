@@ -218,7 +218,7 @@
 					<br/>
 
 					<div class="row mt32 mb32">
-						<div class="col-12">
+						<div class="col-8">
 							<table style="border:1pt solid grey;width:100%;font-size:11px;" width="100%">
 								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px;">
 									 <td style="text-align:left;" colspan="3">
@@ -255,9 +255,9 @@
 								 </tr>
 							</table>
 						</div>
-						<div class="col-2">
+						<div class="col-4" style="vertical-align:middle; tex-align:center; margin-top:0px; ">
 							<img t-if="o.l10n_sa_qr_code_str"
-								t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 70, 70)"/>
+								t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 100, 100)"/>
 						</div>
 					</div>
 
