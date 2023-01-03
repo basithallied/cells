@@ -262,7 +262,7 @@
 						<thead>
 							<tr style="background-color:#DCDCDC">
 								<td width="25%" style="border:1pt solid grey;text-align:center;padding:2pt; ">Items<br/><span class="arabic">العناصر</span></td>
-								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Item <br/> Description<br/><span class="arabic">وصف السلعة</span></td>
+<!--								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Item <br/> Description<br/><span class="arabic">وصف السلعة</span></td>-->
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit Price<br/><span class="arabic">سعر الوحدة</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">Quantity<br/><span class="arabic">الكمية</span></td>
 <!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Discount<br/><span class="arabic">خصومات</span></td>-->
@@ -284,9 +284,9 @@
 						 		<td style="border-right:1pt solid grey;padding:3pt">
 									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
 						 			<br/>
-						 		</td>
-								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-								<sapn t-field="l.product_id.arabic_desc"/>
+<!--						 		</td>-->
+<!--								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
+								-<sapn t-field="l.product_id.arabic_desc"/>
 						 		</td>
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:right;padding:3pt"><span t-field="l.price_unit"/></td>
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>

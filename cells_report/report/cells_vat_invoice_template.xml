@@ -267,7 +267,7 @@
 						<thead>
 							<tr style="background-color:#DCDCDC">
 								<td width="25%" style="border:1pt solid grey;text-align:center;padding:2pt; ">Items<br/><span class="arabic">العناصر</span></td>
-								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Item <br/> Description<br/><span class="arabic">وصف السلعة</span></td>
+<!--								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Item <br/> Description<br/><span class="arabic">وصف السلعة</span></td>-->
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit Price<br/><span class="arabic">سعر الوحدة</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">Quantity<br/><span class="arabic">الكمية</span></td>
 <!--								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Taxable <br/> Amount<br/><span class="arabic">المبلغ الخاضع للضريبة</span></td>-->
@@ -288,13 +288,13 @@
 					 			</t>
 					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.quantity) - l.price_subtotal)"/>
 						 		<td style="border-right:1pt solid grey;padding:3pt">
-						 			<span t-field="l.product_id.name"/> -
+						 			<span t-field="l.product_id.name"/>
 <!--									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>-->
 						 			<br/>
-						 		</td>
+<!--						 		</td>-->
 
-								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">
-									<sapn t-field="l.product_id.description_sale"/>
+<!--								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
+									-<sapn t-field="l.product_id.description_sale"/>
 						 		</td>
 
 
