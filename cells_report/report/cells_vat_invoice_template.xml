@@ -88,70 +88,133 @@
 					</div>
 					<br/>
 
-					<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
-						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-							 <td style="border:1pt solid grey; border-right:1pt solid white;">
-								 <span style="text-align:left;">Cust ID</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
-								 <span class="text-align:right;">رقم العميل</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-right:1pt solid white;">
-								 <span style="text-align:left;">PO#</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
-								 <span style="text-align:right;">رقم الشراء</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-right:1pt solid white;">
-								 <span style="text-align:left;">Delivery Method</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
-								 <span style="text-align:right;">طريقة التوصيل</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-right:1pt solid white;">
-								 <span style="text-align:left;">SO#</span>
-							 </td>
-							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >
-								 <span style="text-align:right;">طلب المبيعات</span>
-							 </td>
-						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.partner_id.id"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.ref"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
+						<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
+							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+								<td style="border:1pt solid grey;">
+									<span style="text-align:left;">Cust ID</span>
+									<span style="text-align:right;">رقم العميل</span>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span style="text-align:left;">PO#</span>
+									<span style="text-align:right;">رقم الشراء</span>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span style="text-align:left;">Delivery Method</span>
+									<span style="text-align:right;">طريقة التوصيل</span>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span style="text-align:left;">SO#</span>
+									<span style="text-align:right;">طلب المبيعات</span>
+								</td>
+							</tr>
+							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+								<td style="border:1pt solid grey;text-align:center;">
+									<span t-field="o.partner_id.id"/>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span t-field="o.ref"/>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
 								 <span t-field="o.new_picking_policy"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.invoice_origin"/>
-							 </td>
-						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-							 <td style="border:1pt solid grey;text-align:center;" colspan="2">
-								  <span style="text-align:left;">Sales Rep</span><span style="text-align:right;">مندوب مبيعات</span>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								  <span style="text-align:left;">payment Terms</span><span style="text-align:right;">شروط الدفع</span>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								  <span style="text-align:left;">Ship to City</span><span style="text-align:right;">شحن إلى المدينة</span>
-							 </td>
-						 </tr>
-						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-							 <td style="border:1pt solid grey;text-align:center;" colspan="2">
-								 <span t-field="o.invoice_user_id"/>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.invoice_payment_term_id.name"></span>
-							 </td>
-							 <td style="border:1pt solid grey;text-align:center;">
-								 <span t-field="o.new_ship_to_city"/>
-							 </td>
-						 </tr>
-					</table>
+							 	</td>
+<!--								<td style="border:1pt solid grey;text-align:center;">-->
+<!--									<span t-field="o.partner_id.id"/>-->
+<!--								</td>-->
+								<td style="border:1pt solid grey;text-align:center;">
+									<span t-field="o.invoice_origin"/>
+								</td>
+							</tr>
+							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+								<td style="border:1pt solid grey;text-align:center;" colspan="2">
+									<span style="text-align:left;">Sales Rep</span>
+									<span style="text-align:right;">مندوب مبيعات</span>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span style="text-align:left;">payment Terms</span>
+									<span style="text-align:right;">شروط الدفع</span>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span style="text-align:left;">Ship to City</span>
+									<span style="text-align:right;">شحن إلى المدينة</span>
+								</td>
+							</tr>
+							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+								<td style="border:1pt solid grey;text-align:center;" colspan="2">
+									<span t-field="o.invoice_user_id"/>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span t-field="o.invoice_payment_term_id.name"/>
+								</td>
+								<td style="border:1pt solid grey;text-align:center;">
+									<span></span>
+								</td>
+							</tr>
+						</table>
+
+<!--						<table style="border:1pt solid grey;width:100%;margin-top:-10px;">-->
+<!--						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--							 <td style="border:1pt solid grey; border-right:1pt solid white;">-->
+<!--								 <span style="text-align:left;">Cust ID</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >-->
+<!--								 <span class="text-align:right;">رقم العميل</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-right:1pt solid white;">-->
+<!--								 <span style="text-align:left;">PO#</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >-->
+<!--								 <span style="text-align:right;">رقم الشراء</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-right:1pt solid white;">-->
+<!--								 <span style="text-align:left;">Delivery Method</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >-->
+<!--								 <span style="text-align:right;">طريقة التوصيل</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-right:1pt solid white;">-->
+<!--								 <span style="text-align:left;">SO#</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey; border-left:1pt solid white; text-align:right;" >-->
+<!--								 <span style="text-align:right;">طلب المبيعات</span>-->
+<!--							 </td>-->
+<!--						 </tr>-->
+<!--						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								 <span t-field="o.partner_id.id"/>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								 <span t-field="o.ref"/>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								 <span t-field="o.new_picking_policy"/>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								 <span t-field="o.invoice_origin"/>-->
+<!--							 </td>-->
+<!--						 </tr>-->
+<!--						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--							 <td style="border:1pt solid grey;text-align:center;" colspan="2">-->
+<!--								  <span style="text-align:left;">Sales Rep</span><span style="text-align:right;">مندوب مبيعات</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								  <span style="text-align:left;">payment Terms</span><span style="text-align:right;">شروط الدفع</span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								  <span style="text-align:left;">Ship to City</span><span style="text-align:right;">شحن إلى المدينة</span>-->
+<!--							 </td>-->
+<!--						 </tr>-->
+<!--						 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--							 <td style="border:1pt solid grey;text-align:center;" colspan="2">-->
+<!--								 <span t-field="o.invoice_user_id"/>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								 <span t-field="o.invoice_payment_term_id.name"></span>-->
+<!--							 </td>-->
+<!--							 <td style="border:1pt solid grey;text-align:center;">-->
+<!--								 <span t-field="o.new_ship_to_city"/>-->
+<!--							 </td>-->
+<!--						 </tr>-->
+<!--					</table>-->
 					<br/>
 
 					<div class="row mt32 mb32">
