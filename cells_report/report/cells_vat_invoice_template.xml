@@ -19,11 +19,11 @@
 					<div class="row mt32 mb32">
 						 <div class="col-6" style="margin-top:-28pt;">
 							 <table style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-									 <td style="text-align:left;">
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px; background-color:#DCDCDC">
+									 <td style="text-align:left; padding-left:5px;">
 										 <span class="text-left arabic"> Customer Information </span>
 									 </td>
-									 <td style="text-align:right;">
+									 <td style="text-align:right; padding-right:5px;">
 										 <span class="text-left arabic"> معلومات العميل </span>
 									 </td>
 								 </tr>
@@ -50,11 +50,11 @@
 						 </div>
 						 <div class="col-6" style="margin-top:-28pt;">
 							 <table style="border:1pt solid grey;width:100%;font-size:11px; margin-top:-10px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-									 <td style="text-align:left;">
+								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px; background-color:#DCDCDC">
+									 <td style="text-align:left; padding-left:5px;">
 										 <span class="text-left arabic"> Supplier Information </span>
 									 </td>
-									 <td style="text-align:right;">
+									 <td style="text-align:right; padding-right:5px;">
 										 <span class="text-right arabic">معلومات المورد</span>
 									 </td>
 								 </tr>
@@ -89,22 +89,22 @@
 					<br/>
 
 						<table style="border:1pt solid grey;width:100%;margin-top:-10px;">
-							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px; background-color:#DCDCDC">
 								<td style="border:1pt solid grey;">
-									<span style="text-align:left;" class="english">Cust ID</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;" class="arabic">رقم العميل</span>
+									<span style="text-align:left;padding-left:5px;" class="english">Cust ID</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">رقم العميل</span>
 								</td>
 								<td style="border:1pt solid grey;text-align:left;">
-									<span style="text-align:left;">PO#</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;">رقم الشراء</span>
+									<span style="text-align:left;padding-left:5px;" class="english">PO#</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">رقم الشراء</span>
 								</td>
 								<td style="border:1pt solid grey;text-align:left;">
-									<span style="text-align:left;">Delivery Method</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;">طريقة التوصيل</span>
+									<span style="text-align:left;padding-left:5px;" class="english">Delivery Method</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">طريقة التوصيل</span>
 								</td>
 								<td style="border:1pt solid grey;text-align:left;">
-									<span style="text-align:left;">SO#</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;">طلب المبيعات</span>
+									<span style="text-align:left;padding-left:5px;" class="english">SO#</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">طلب المبيعات</span>
 								</td>
 							</tr>
 							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
@@ -124,18 +124,18 @@
 									<span t-field="o.invoice_origin"/>
 								</td>
 							</tr>
-							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
+							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;background-color:#DCDCDC">
 								<td style="border:1pt solid grey;text-align:left;" colspan="2">
-									<span style="text-align:left;">Sales Rep</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;">مندوب مبيعات</span>
+									<span style="text-align:left;padding-left:5px;" class="english">Sales Rep</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">مندوب مبيعات</span>
 								</td>
 								<td style="border:1pt solid grey;text-align:left;">
-									<span style="text-align:left;">payment Terms</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;">شروط الدفع</span>
+									<span style="text-align:left;padding-left:5px;" class="english">Payment Terms</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">شروط الدفع</span>
 								</td>
 								<td style="border:1pt solid grey;text-align:left;">
-									<span style="text-align:left;">Ship to City</span>
-									<span style="text-align:right;float:right;!important;white-space: nowrap;">شحن إلى المدينة</span>
+									<span style="text-align:left;padding-left:5px;" class="english">Ship to City</span>
+									<span style="text-align:right;padding-right:5px;float:right;!important;white-space: nowrap;" class="arabic">شحن إلى المدينة</span>
 								</td>
 							</tr>
 							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
@@ -146,7 +146,7 @@
 									<span t-field="o.invoice_payment_term_id.name"/>
 								</td>
 								<td style="border:1pt solid grey;text-align:center;">
-									<span></span>
+									<span t-field="o.new_ship_to_city"/>
 								</td>
 							</tr>
 						</table>
