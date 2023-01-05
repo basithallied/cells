@@ -36,7 +36,7 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[@name='products']" position="after">
                 <page string="Terms And Conditions" name="project_spec">
-                    <group>
+                    <group name="terms_conditions" groups="sh_so_tnc.group_so_tnc">
                     <field name="sh_in_report"/>
                     <field name="term_conditions"/>
                     <field name="terms_detail"/>
