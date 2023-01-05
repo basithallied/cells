@@ -244,8 +244,8 @@
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:right;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>
 								<td style="border-right:1pt solid grey;padding:3pt">
 <!--						 			<span t-field="l.name"/> -->
-									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
-						 			<br/>
+<!--									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>-->
+<!--						 			<br/>-->
 <!--						 		</td>-->
 <!--								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
 									-<sapn t-esc="l.product_id.product_tmpl_id.arabic_desc"/>

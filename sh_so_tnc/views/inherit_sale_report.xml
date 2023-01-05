@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit quotation report-->
+<!--    <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">-->
+<!--        <xpath expr="//p[@id='fiscal_position_remark']" position="after">-->
+<!--            <div groups="sh_so_tnc.group_so_tnc">-->
+<!--                <t t-if="doc.term_conditions and doc.sh_in_report"> <strong>Terms Details:</strong><span t-field="doc.terms_detail" /> </t>-->
+<!--            </div>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

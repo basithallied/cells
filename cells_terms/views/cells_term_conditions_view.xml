@@ -50,7 +50,7 @@
         <field name="view_id" ref="cells_terms_conditions_tree"/>
     </record>
 
-    <menuitem name="Terms and Conditions" id="cells_terms_and_conditions" parent="sale.menu_sale_config"
-              action="action_cells_terms_conditions" sequence="11"/>
+<!--    <menuitem name="Terms and Conditions" id="cells_terms_and_conditions" parent="sale.menu_sale_config"-->
+<!--              action="action_cells_terms_conditions" sequence="11"/>-->
 
 </odoo>

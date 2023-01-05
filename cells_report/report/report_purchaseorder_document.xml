@@ -244,9 +244,9 @@
 <!--					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.product_uom_qty) - l.price_subtotal)"/>-->
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:right;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>
 								<td style="border-right:1pt solid grey;padding:3pt">
-						 			<span t-field="l.name"/>
+<!--						 			<span t-field="l.name"/>-->
 <!--									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>-->
-						 			<br/>
+<!--						 			<br/>-->
 <!--						 		</td>-->
 
 <!--								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->

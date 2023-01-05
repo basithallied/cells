@@ -35,12 +35,12 @@
         <field name="view_id" ref="cells_term_category_tree"/>
     </record>
 
-    <menuitem
-            id="menu_cells_terms_category"
-            name="Terms Category"
-            parent="sale.menu_sale_config"
-            action="cells_term_category_action"
-            sequence="10"/>
+<!--    <menuitem-->
+<!--            id="menu_cells_terms_category"-->
+<!--            name="Terms Category"-->
+<!--            parent="sale.menu_sale_config"-->
+<!--            action="cells_term_category_action"-->
+<!--            sequence="10"/>-->
 
 
 </odoo>

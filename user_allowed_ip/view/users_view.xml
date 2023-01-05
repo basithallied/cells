@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Dispatch View -->
+    <record id="allowed_ip_tree" model="ir.ui.view">
+        <field name="name">allowed.ip.tree</field>
+        <field name="model">allowed.ip</field>
+        <field name="arch" type="xml">
+            <tree string="IP">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="allowed_ip_filter" model="ir.ui.view">
+        <field name="name">allowed.ip.select</field>
+        <field name="model">allowed.ip</field>
+        <field name="arch" type="xml">
+            <search string="IP">
+                <field name="name"/>
+           </search>
+        </field>
+    </record>
+
+    <record id="allowed_ip_view" model="ir.ui.view">
+        <field name="name">allowed.ip.form</field>
+        <field name="model">allowed.ip</field>
+        <field name="arch" type="xml">
+            <form string="IP">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="IP" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="8.8.8.8"/></h1>
+                    </div>
+                    <field name="ip_ids">
+                        <tree string="Users" editable="bottom">
+                            <field name="user_id"/>
+                        </tree>
+                    </field>
+                    <field name="description" placeholder="Description"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_ip_manager" model="ir.actions.act_window">
+        <field name="name">Allowed IP</field>
+        <field name="res_model">allowed.ip</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Click to manage a new IP.
+          </p><p>
+            This allows you to manage user login by allowe IP.
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_ip" name="Allowed IP" action="action_ip_manager" parent="base.menu_users" sequence="5"/>
+
+    <!-- Normal user form -->
+    <record id="view_users_form" model="ir.ui.view" >
+        <field name="name">res.users.form.inherited</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']" position="after">
+                <page name="allowed_ips" string="Allowed IP">
+                    <field name="ip_ids">
+                        <tree string="Users" editable="bottom">
+                            <field name="ip_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -283,8 +283,8 @@
 					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.product_uom_qty) - l.price_subtotal)"/>
 						 		<td style="border-right:1pt solid grey;width:13%;text-align:center;padding:3pt"><span t-esc="'%.2f'%(l.product_uom_qty)"/></td>
 								<td style="border-right:1pt solid grey;padding:3pt">
-									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>
-						 			<br/>
+<!--									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>-->
+<!--						 			<br/>-->
 <!--						 		</td>-->
 <!--								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
 								-<sapn t-field="l.product_id.arabic_desc"/>
@@ -353,39 +353,42 @@
 						</thead>
 					</table>
 
-					<br/><br/>
-					<t t-set="conditions" t-value="doc.get_conditions(doc.terms_category_id)"/>
-						<span t-if="conditions">
-						<table>
-							<tr t-foreach="conditions" t-as="term">
-								<t t-if="term.language == 'english'">
-									<tr>
-										<span style="font-size:15px; font-weight: bold;" t-field="term.name"/>
-										<br/>
-									</tr>
-									<tr t-foreach="term.line_ids" t-as="val">
-										<span style="color:black;" t-field="val.description"/>
-										<br/>
-									</tr>
-								</t>
-								<t t-if="term.language == 'arabic'">
-									<div style="text-align:right;">
-										<tr>
-											<span style="font-size:15px; float:right; font-weight: bold;"
-												  t-field="term.name"/>
-											<br/>
-										</tr>
-										<tr t-foreach="term.line_ids" t-as="val">
-											<span style="color:black; float:right;" t-field="val.description"/>
-											<br/>
-										</tr>
-									</div>
-								</t>
+					<br/><br/><br></br>
+						<div style="margin-top:15%"  groups="sh_so_tnc.group_so_tnc">
+                <t t-if="doc.term_conditions and doc.sh_in_report"> <strong>Terms Details:</strong><span t-field="doc.terms_detail" /> </t>
+            </div>
+<!--					<t t-set="conditions" t-value="doc.get_conditions(doc.terms_category_id)"/>-->
+<!--						<span t-if="conditions">-->
+<!--						<table>-->
+<!--							<tr t-foreach="conditions" t-as="term">-->
+<!--								<t t-if="term.language == 'english'">-->
+<!--									<tr>-->
+<!--										<span style="font-size:15px; font-weight: bold;" t-field="term.name"/>-->
+<!--										<br/>-->
+<!--									</tr>-->
+<!--									<tr t-foreach="term.line_ids" t-as="val">-->
+<!--										<span style="color:black;" t-field="val.description"/>-->
+<!--										<br/>-->
+<!--									</tr>-->
+<!--								</t>-->
+<!--								<t t-if="term.language == 'arabic'">-->
+<!--									<div style="text-align:right;">-->
+<!--										<tr>-->
+<!--											<span style="font-size:15px; float:right; font-weight: bold;"-->
+<!--												  t-field="term.name"/>-->
+<!--											<br/>-->
+<!--										</tr>-->
+<!--										<tr t-foreach="term.line_ids" t-as="val">-->
+<!--											<span style="color:black; float:right;" t-field="val.description"/>-->
+<!--											<br/>-->
+<!--										</tr>-->
+<!--									</div>-->
+<!--								</t>-->
 
-								<br/>
-							</tr>
-						</table>
-					</span>
+<!--								<br/>-->
+<!--							</tr>-->
+<!--						</table>-->
+<!--					</span>-->
 
 					<br/>
 

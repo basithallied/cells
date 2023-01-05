@@ -288,9 +288,9 @@
 					 			<t t-set="discount_total" t-value="discount_total + ((l.price_unit * l.quantity) - l.price_subtotal)"/>
 						 		<td style="border-right:1pt solid grey;text-align:right;padding:3pt"><span t-esc="'%.2f'%(l.quantity)"/></td>
 								<td style="border-right:1pt solid grey;padding:3pt">
-						 			<span t-field="l.product_id.name"/>
+<!--						 			<span t-field="l.product_id.name"/>-->
 <!--									<span class="text-right arabic" t-esc="l.product_id.arabic_name"/>-->
-						 			<br/>
+<!--						 			<br/>-->
 <!--						 		</td>-->
 
 <!--								<td style="padding:3pt;border-right:1pt solid grey;text-align:right;">-->
@@ -425,6 +425,10 @@
 							</tr>
 						</thead>
 					</table>
+						<br></br><br></br><br></br>
+						<div style="margin-top:15%" groups="sh_so_tnc.group_so_tnc">
+                <t t-if="o.term_conditions and o.sh_in_report"> <strong>Terms Details:</strong><span t-field="o.terms_detail" /> </t>
+            </div>
 
 <!--					<table style="border:1pt solid grey;width:100%;font-size:11px;color:black;color:black;" class="table table-bordered table-sm">-->
 <!--						<thead>-->
@@ -435,19 +439,19 @@
 <!--						</thead>-->
 <!--					</table>-->
 
-					<span t-if="conditions">
-						<table>
-							<tr t-foreach="conditions" t-as="term">
-								<tr>
-									<span style="color:black;" t-field="term.name"/> <br/>
-								</tr>
-								<tr t-foreach="term.line_ids" t-as="val">
-									<span style="color:black;" t-field="val.description"/><br/>
-								</tr>
-								<br/>
-							</tr>
-						</table>
-					</span>
+<!--					<span t-if="conditions">-->
+<!--						<table>-->
+<!--							<tr t-foreach="conditions" t-as="term">-->
+<!--								<tr>-->
+<!--									<span style="color:black;" t-field="term.name"/> <br/>-->
+<!--								</tr>-->
+<!--								<tr t-foreach="term.line_ids" t-as="val">-->
+<!--									<span style="color:black;" t-field="val.description"/><br/>-->
+<!--								</tr>-->
+<!--								<br/>-->
+<!--							</tr>-->
+<!--						</table>-->
+<!--					</span>-->
 					<br/><br></br><br></br><br></br>
 						<div style="margin-top:10%" >
 						<span  style="padding-right:450pt;padding-top:30pt;">.............................Signature &amp;nbsp; إمضاء</span>

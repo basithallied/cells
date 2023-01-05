@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 	Invoice form view inherited-->
+    <record id="sh_invoice_tnc_form_view_inherit" model="ir.ui.view">
+        <field name="name">account.move.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page string="Terms And Conditions" name="terms_conditions" groups="sh_so_tnc.group_so_tnc">
+                    <group name="terms_info" string="Terms And Conditions">
+                        <group>
+                            <field name="sh_in_report" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="term_conditions" />
+                        <field name="terms_detail" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    
+    
+    <!-- Inherit Invoice report -->
+<!--    <template id="report_invoice_tnc_inherit" inherit_id="account.report_invoice_document">-->
+<!--        <xpath expr="//div[hasclass('page')]" position="inside">-->
+<!--            <div groups="sh_so_tnc.group_so_tnc">-->
+<!--                <t t-if="o.term_conditions and o.sh_in_report"> <strong>Terms Details:</strong><span t-field="o.terms_detail" /> </t>-->
+<!--            </div>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  	sh.so.tnc form view -->
+    <record id="sh_so_tnc_view_form" model="ir.ui.view">
+        <field name="name">sh.so.tnc.form</field>
+        <field name="model">sh.so.tnc</field>
+        <field name="arch" type="xml">
+            <form string="Terms and Conditions">
+                <sheet>
+                    <group col="2" string="Terms And Conditions">
+                        <field name="name" required="True" />
+                        <field name="terms_con" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- 	sh.so.tnc tree view	 -->
+    <record id="sh_so_tnc_view_tree" model="ir.ui.view">
+        <field name="name">sh.so.tnc.tree</field>
+        <field name="model">sh.so.tnc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <!--     sh.so.tnc view action -->
+    <record id="sh_so_tnc_action" model="ir.actions.act_window">
+        <field name="name">Terms and Conditions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.so.tnc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--     sh.so.tnc menu -->
+    <menuitem id="term_conditions_sale_config_menu" groups="sh_so_tnc.group_so_tnc" name="Terms And Conditions" parent="sale.menu_sale_config" action="sh_so_tnc_action" sequence="5" />
+</odoo>

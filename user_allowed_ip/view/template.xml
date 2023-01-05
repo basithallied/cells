@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <template id="user_allowed_ip.fields" inherit_id="web.login" name="signin">
+        <xpath expr="//div[hasclass('field-password')]" position="after">
+            <div class="form-group field-ip">
+                <input type="hidden" name="ip" id="ip" class="form-control"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

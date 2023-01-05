@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 	sale order form view inherited-->
+    <record id="sh_sale_order_form_view_inherit" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page string="Terms And Conditions" name="terms_conditions" groups="sh_so_tnc.group_so_tnc">
+                    <group name="terms_info" string="Terms And Conditions">
+                        <group>
+                            <field name="sh_in_report" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="term_conditions" />
+                        <field name="terms_detail" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- 	sale order template form view inherited-->
+    <record id="sh_sale_order_template_form_view_inherit" model="ir.ui.view">
+        <field name="name">sale.order.template.inherit</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='confirmation']" position="after">
+                <page string="Terms And Conditions" name="terms_conditions" groups="sh_so_tnc.group_so_tnc">
+                    <group name="terms_info" string="Terms And Conditions">
+                        <field name="term_conditions" />
+                        <field name="terms_detail" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

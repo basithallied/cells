@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 	sale preview terms & conditions -->
+    <template id="sh_portal_contact" inherit_id="sale.sale_order_portal_content" name="Sh Sales Order Portal Content">
+        <xpath expr="//section[@id='terms']" position="before">
+            <section id="sh_terms" class="mt-5" t-if="sale_order.term_conditions" groups="sh_so_tnc.group_so_tnc">
+                <h3 class="">Terms &amp; Conditions</h3>
+                <hr class="mt-0 mb-1" />
+                <em t-field="sale_order.terms_detail" />
+            </section>
+        </xpath>
+    </template>
+</odoo>
