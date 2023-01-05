@@ -217,51 +217,74 @@
 <!--					</table>-->
 					<br/>
 
-					<div class="row mt32 mb32">
-						<div class="col-8">
-							<table style="border:1pt solid grey;width:100%;font-size:11px;" width="100%">
-								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px;">
-									 <td style="text-align:left;" colspan="3">
-										 Bank   :
-										 <span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
-										  <td></td>
-									 </td>
-								 </tr>
-<!--								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
-<!--									 <td style="text-align:left;" >-->
-<!--										 <span t-field="o.company_id.bank_id.street" style="font-size: 12.4px;"/>-->
-<!--									 </td>-->
-<!--									 <td style="text-align:left;">-->
-<!--										 <span t-field="o.company_id.bank_id.street2" style="font-size: 12.4px;"/>-->
-<!--									 </td>-->
-<!--									 <td style="text-align:left;">-->
-<!--										 <span t-field="o.company_id.bank_id.country" style="font-size: 12.4px;"/>-->
+<!--					<div class="row mt32 mb32">-->
+<!--						<div class="col-8">-->
+<!--							<table style="border:1pt solid grey;width:100%;font-size:11px;" width="100%">-->
+<!--								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px;">-->
+<!--									 <td style="text-align:left;" colspan="3">-->
+<!--										 Bank   :-->
+<!--										 <span t-field="o.bank_id.name" style="font-size: 12.4px;"/>-->
+<!--										  <td></td>-->
 <!--									 </td>-->
 <!--								 </tr>-->
-								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-									 <td style="text-align:left;" colspan="3">
-										 ACC NO 	:	<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
-									 </td>
-								 </tr>
-								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-									 <td style="text-align:left;" colspan="3">
-										 IBAN   	:	<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
-									 </td>
-								 </tr>
-								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
-									 <td style="text-align:left;" colspan="3">
-										 SWIFT  	:	<span t-field="o.bank_id.swift" style="font-size: 12.4px;"/>
-									 </td>
-								 </tr>
-							</table>
-						</div>
-						<div class="col-4" style="vertical-align:middle; tex-align:center; margin-top:0px; ">
-							<img t-if="o.l10n_sa_qr_code_str"
-								t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 100, 100)"/>
-						</div>
-					</div>
+<!--&lt;!&ndash;								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">&ndash;&gt;-->
+<!--&lt;!&ndash;									 <td style="text-align:left;" >&ndash;&gt;-->
+<!--&lt;!&ndash;										 <span t-field="o.company_id.bank_id.street" style="font-size: 12.4px;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;									 </td>&ndash;&gt;-->
+<!--&lt;!&ndash;									 <td style="text-align:left;">&ndash;&gt;-->
+<!--&lt;!&ndash;										 <span t-field="o.company_id.bank_id.street2" style="font-size: 12.4px;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;									 </td>&ndash;&gt;-->
+<!--&lt;!&ndash;									 <td style="text-align:left;">&ndash;&gt;-->
+<!--&lt;!&ndash;										 <span t-field="o.company_id.bank_id.country" style="font-size: 12.4px;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;									 </td>&ndash;&gt;-->
+<!--&lt;!&ndash;								 </tr>&ndash;&gt;-->
+<!--								 <tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--									 <td style="text-align:left;" colspan="3">-->
+<!--										 ACC NO 	:	<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>-->
+<!--									 </td>-->
+<!--								 </tr>-->
+<!--								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--									 <td style="text-align:left;" colspan="3">-->
+<!--										 IBAN   	:	<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>-->
+<!--									 </td>-->
+<!--								 </tr>-->
+<!--								<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">-->
+<!--									 <td style="text-align:left;" colspan="3">-->
+<!--										 SWIFT  	:	<span t-field="o.bank_id.swift" style="font-size: 12.4px;"/>-->
+<!--									 </td>-->
+<!--								 </tr>-->
+<!--							</table>-->
+<!--						</div>-->
+<!--						<div class="col-4" style="vertical-align:middle; tex-align:center; margin-top:0px; ">-->
+<!--							<img t-if="o.l10n_sa_qr_code_str"-->
+<!--								t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 100, 100)"/>-->
+<!--						</div>-->
+<!--					</div>-->
+						<table style="border:1pt solid grey;width:100%;font-size:11px;color:black; margin-top:-10pt;">
+							<tr>
+								<td width="20%" class="col-4" style="border-bottom:1pt solid grey;font-size:12.4px;">
+									Bank:
+									<span t-field="o.bank_id.name" style="font-size: 12.4px;"/>
+									<br/>
+									ACC NO :
+									<span t-field="o.bank_id.acc_no" style="font-size: 12.4px;"/>
+									<br/>
+									IBAN :
+									<span t-field="o.bank_id.iban" style="font-size: 12.4px;"/>
+									<br/>
+									SWIFT :
+									<span t-field="o.bank_id.swift" style="font-size: 12.4px;"/>
+									<!--<td>-->
+								</td>
+								<td width="20%"
+									style="border-right:1pt solid grey; border-left:1pt solid grey; padding-top:15px;padding-left:4px; padding-right:4px;">
+									<img t-if="o.l10n_sa_qr_code_str"
+								t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 100, 100)"/>								</td>
 
-					<br/><br/>
+							</tr>
+
+						</table>
+						<br/><br/>
 
 					<table style="border:1pt solid grey;width:100%;color:black;font-size:12.4px; margin-top:-15pt; color:black;" class="table-condensed">
 						<thead>
