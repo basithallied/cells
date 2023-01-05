@@ -626,38 +626,43 @@
 <!--                    </table>-->
 <!--                </div>-->
 <!--            </div>-->
-			<t t-set="conditions" t-value="o.get_conditions(o.terms_category_id)"/>
-					<span t-if="conditions">
-						<table>
-							<tr t-foreach="conditions" t-as="term">
-								<t t-if="term.language == 'english'">
-									<tr>
-										<span style="font-size:15px; font-weight: bold;" t-field="term.name"/>
-										<br/>
-									</tr>
-									<tr t-foreach="term.line_ids" t-as="val">
-										<span style="color:black;" t-field="val.description"/>
-										<br/>
-									</tr>
-								</t>
-								<t t-if="term.language == 'arabic'">
-									<div style="text-align:right;">
-										<tr>
-											<span style="font-size:15px; float:right; font-weight: bold;"
-												  t-field="term.name"/>
-										</tr>
-										<br/>
-										<tr t-foreach="term.line_ids" t-as="val">
-											<span style="color:black; float:right;" t-field="val.description"/>
-										</tr>
-										<br/>
-									</div>
-								</t>
 
-								<br/>
-							</tr>
-						</table>
-					</span>
+
+			<div style="margin-top:15%" groups="sh_so_tnc.group_so_tnc">
+                <t t-if="o.term_conditions and o.sh_in_report"> <strong>Terms Details:</strong><span t-field="o.terms_detail" /> </t>
+            </div>
+<!--			<t t-set="conditions" t-value="o.get_conditions(o.terms_category_id)"/>-->
+<!--					<span t-if="conditions">-->
+<!--						<table>-->
+<!--							<tr t-foreach="conditions" t-as="term">-->
+<!--								<t t-if="term.language == 'english'">-->
+<!--									<tr>-->
+<!--										<span style="font-size:15px; font-weight: bold;" t-field="term.name"/>-->
+<!--										<br/>-->
+<!--									</tr>-->
+<!--									<tr t-foreach="term.line_ids" t-as="val">-->
+<!--										<span style="color:black;" t-field="val.description"/>-->
+<!--										<br/>-->
+<!--									</tr>-->
+<!--								</t>-->
+<!--								<t t-if="term.language == 'arabic'">-->
+<!--									<div style="text-align:right;">-->
+<!--										<tr>-->
+<!--											<span style="font-size:15px; float:right; font-weight: bold;"-->
+<!--												  t-field="term.name"/>-->
+<!--										</tr>-->
+<!--										<br/>-->
+<!--										<tr t-foreach="term.line_ids" t-as="val">-->
+<!--											<span style="color:black; float:right;" t-field="val.description"/>-->
+<!--										</tr>-->
+<!--										<br/>-->
+<!--									</div>-->
+<!--								</t>-->
+
+<!--								<br/>-->
+<!--							</tr>-->
+<!--						</table>-->
+<!--					</span>-->
 					<br/>
 <div style="margin-top:10%" >
 	<span  style="padding-right:450pt;padding-top:30pt;">.............................Signature &amp;nbsp; إمضاء</span>

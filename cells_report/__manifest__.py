@@ -10,7 +10,7 @@
      """,
     "author": "Zinfog code labs",
     "email": '',
-    'depends': ['base', 'sale', 'product', 'sales_team', 'purchase', 'web', 'cells_terms'],
+    'depends': ['base', 'sale', 'product', 'sh_so_tnc','sales_team', 'purchase', 'web', 'cells_terms'],
 
     'data': [
         'security/ir.model.access.csv',
