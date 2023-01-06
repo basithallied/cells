@@ -209,28 +209,24 @@ class ResPartner(models.Model):
     other_seller_id = fields.Char('Other Seller Id')
     journal_id = fields.Many2one('account.journal', string='Journal')
 
-    @api.model
-    def create(self, vals):
-        res=super(ResPartner,self).create(vals)
-        print(res.id, 'qqqqqqqqqqqqqqqqqqq')
-        seller= res.id
-        if not self.other_seller_id:
-            res.other_seller_id = seller
-            print("..........................", self.other_seller_id)
-
-        return res
-
-
     # @api.model
-    # def update(self, vals):
-    #     res = super(ResPartner, self).update(vals)
+    # def create(self, vals):
+    #     res=super(ResPartner,self).create(vals)
     #     print(res.id, 'qqqqqqqqqqqqqqqqqqq')
     #     seller= res.id
     #     if not self.other_seller_id:
     #         res.other_seller_id = seller
     #         print("..........................", self.other_seller_id)
+    #
     #     return res
 
+    # def update(self):
+    #     res=super(ResPartner,self).update()
+    #     print("....................")
+    #     seller = res.id
+    #     res.other_seller_id = seller
+    #     return res
+    #
 
 
 

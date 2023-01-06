@@ -102,7 +102,7 @@
 							</tr>
 							<tr style="border:1pt solid grey;width:100%;font-size:12.4px; margin-top:-10px;">
 								<td style="border:1pt solid grey;text-align:center;">
-									<span t-field="o.partner_id.id"/>
+									<span t-field="o.partner_id.other_seller_id"/>
 								</td>
 								<td style="border:1pt solid grey;text-align:center;">
 									<span t-field="o.client_order_ref"/>
