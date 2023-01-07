@@ -41,4 +41,5 @@ class PurchaseOrder(models.Model):
         , help="If you deliver all products at once, the delivery order will be scheduled based on the greatest "
                "product lead time. Otherwise, it will be based on the shortest.")
     customer_so = fields.Char('Customer SO')
+    purchase_ship_to_city = fields.Char('Ship To City')
 

@@ -135,7 +135,7 @@
 									<span t-field="o.payment_term_id.name"/>
 								</td>
 								<td style="border:1pt solid grey;text-align:center;">
-									<span> </span>
+									<span t-field="o.ship_to_city"/>
 								</td>
 							</tr>
 						</table>
@@ -261,10 +261,10 @@
 					<table style="border:1pt solid grey;width:100%;color:black;font-size:12.4px; margin-top:-15pt; color:black;" class="table-condensed">
 						<thead>
 							<tr style="background-color:#DCDCDC">
-								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">QTY#<br/><span class="arabic">الكمية</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;width:7%">QTY #<br/><span class="arabic">الكمية</span></td>
 								<td style="border:1pt solid grey;text-align:center;padding:2pt;" >Description<br/><span class="arabic">وصف السلعة</span></td>
 
-								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit$<br/><span class="arabic">سعر الوحدة</span></td>
+								<td style="border:1pt solid grey;text-align:center;padding:2pt;">Unit $<br/><span class="arabic">سعر الوحدة</span></td>
 <!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Discount<br/><span class="arabic">خصومات</span></td>-->
 <!--								<td style="bordeالمجموع (شامل ضريبة القيمة المضافة)المجموع (شامل ضريبة القيمة المضافة)r:1pt solid grey;text-align:center;padding:2pt;width:8%">Tax Rate<br/><span class="arabic">نسبة الضريبة</span></td>-->
 <!--								<td style="border:1pt solid grey;text-align:center; width:10%;padding:2pt">Tax Amount<br/><span class="arabic">مبلغ الضريبة</span></td>-->
